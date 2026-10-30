@@ -678,7 +678,69 @@
     switchView('view-upload');
   };
 
-  // --- Pipeline Steps Progressive Animation ---
+  // --- Pipeline Steps Progressive Animation & Dynamic Backend Telemetry ---
+  let pipelineTimers = [];
+
+  window.skipToDashboard = function () {
+    pipelineTimers.forEach(t => clearTimeout(t));
+    pipelineTimers = [];
+    finishPipelineSteps(activeReviewCount);
+  };
+
+  function finishPipelineSteps(reviewCount) {
+    const steps = [
+      document.getElementById('step-1'),
+      document.getElementById('step-2'),
+      document.getElementById('step-3'),
+      document.getElementById('step-4'),
+      document.getElementById('step-5')
+    ];
+    const details = [
+      document.getElementById('step-detail-1'),
+      document.getElementById('step-detail-2'),
+      document.getElementById('step-detail-3'),
+      document.getElementById('step-detail-4'),
+      document.getElementById('step-detail-5')
+    ];
+
+    steps.forEach(s => setStepCompleted(s));
+    details.forEach(d => { if (d) d.classList.remove('active'); });
+
+    const activeData = currentVocData || (typeof VOC_DATA !== 'undefined' ? VOC_DATA : null) || { themes: [], recommendations: [] };
+    const totalReviews = activeData.totalReviews || reviewCount || 6000;
+    const themeCount = activeData.themes ? activeData.themes.filter(t => t.cluster_id >= 0).length : 12;
+    const churnRate = (activeData.overallChurnRate !== undefined) ? activeData.overallChurnRate : 24.9;
+    const recsCount = activeData.recommendations ? activeData.recommendations.length : 3;
+
+    // Update KPIs based on analyzed data
+    if (kpiReviews) kpiReviews.textContent = totalReviews.toLocaleString();
+    if (kpiThemes) kpiThemes.textContent = themeCount.toString();
+    if (kpiChurn) kpiChurn.textContent = churnRate.toFixed(1) + '%';
+    if (kpiCitations) kpiCitations.textContent = '100.0%';
+
+    // Update Nav Tab Badges
+    const tabClustersBadge = document.getElementById('tab-clusters-count');
+    if (tabClustersBadge) {
+      tabClustersBadge.textContent = `${themeCount} ${themeCount === 1 ? 'Cluster' : 'Clusters'}`;
+    }
+    const tabRecsBadge = document.getElementById('tab-recs-count');
+    if (tabRecsBadge) {
+      tabRecsBadge.textContent = `${recsCount} ${recsCount === 1 ? 'Initiative' : 'Initiatives'}`;
+    }
+
+    const dashMetaText = document.getElementById('dash-meta-text');
+    if (dashMetaText) {
+      dashMetaText.textContent = `Analyzed from ${totalReviews.toLocaleString()} customer review${totalReviews === 1 ? '' : 's'} • 100% Verbatim Grounded Citations`;
+    }
+
+    // Render fresh cards
+    renderThemes();
+    renderRoadmap();
+
+    // Smooth switch to Dashboard
+    switchView('view-dashboard');
+  }
+
   function runPipelineSteps(reviewCount) {
     const steps = [
       document.getElementById('step-1'),
@@ -687,8 +749,19 @@
       document.getElementById('step-4'),
       document.getElementById('step-5')
     ];
+    const details = [
+      document.getElementById('step-detail-1'),
+      document.getElementById('step-detail-2'),
+      document.getElementById('step-detail-3'),
+      document.getElementById('step-detail-4'),
+      document.getElementById('step-detail-5')
+    ];
 
-    // Reset step styles
+    // Clear any previous running timers
+    pipelineTimers.forEach(t => clearTimeout(t));
+    pipelineTimers = [];
+
+    // Reset step styles and detail card visibility
     steps.forEach((step, idx) => {
       if (!step) return;
       step.classList.remove('running', 'completed');
@@ -698,68 +771,59 @@
       }
     });
 
+    details.forEach((detail, idx) => {
+      if (!detail) return;
+      if (idx === 0) detail.classList.add('active');
+      else detail.classList.remove('active');
+    });
+
     if (steps[0]) steps[0].classList.add('running');
 
-    // Sequential timing
-    setTimeout(() => {
+    // Deliberate 1.5s pacing per step: slow enough to observe backend flow clearly
+    const STEP_DURATION = 1500;
+
+    // Transition: Step 1 -> Step 2
+    pipelineTimers.push(setTimeout(() => {
       setStepCompleted(steps[0]);
+      if (details[0]) details[0].classList.remove('active');
       setStepRunning(steps[1]);
-    }, 450);
+      if (details[1]) details[1].classList.add('active');
+    }, STEP_DURATION));
 
-    setTimeout(() => {
+    // Transition: Step 2 -> Step 3
+    pipelineTimers.push(setTimeout(() => {
       setStepCompleted(steps[1]);
+      if (details[1]) details[1].classList.remove('active');
       setStepRunning(steps[2]);
-    }, 900);
+      if (details[2]) details[2].classList.add('active');
+    }, STEP_DURATION * 2));
 
-    setTimeout(() => {
+    // Transition: Step 3 -> Step 4
+    pipelineTimers.push(setTimeout(() => {
       setStepCompleted(steps[2]);
+      if (details[2]) details[2].classList.remove('active');
       setStepRunning(steps[3]);
-    }, 1400);
+      if (details[3]) details[3].classList.add('active');
+    }, STEP_DURATION * 3));
 
-    setTimeout(() => {
+    // Transition: Step 4 -> Step 5
+    pipelineTimers.push(setTimeout(() => {
       setStepCompleted(steps[3]);
+      if (details[3]) details[3].classList.remove('active');
       setStepRunning(steps[4]);
-    }, 1900);
+      if (details[4]) details[4].classList.add('active');
+    }, STEP_DURATION * 4));
 
-    setTimeout(() => {
+    // Step 5 completes
+    pipelineTimers.push(setTimeout(() => {
       setStepCompleted(steps[4]);
-    }, 2350);
+      if (details[4]) details[4].classList.remove('active');
+    }, STEP_DURATION * 5));
 
-    setTimeout(() => {
-      const activeData = currentVocData || (typeof VOC_DATA !== 'undefined' ? VOC_DATA : null) || { themes: [], recommendations: [] };
-      const totalReviews = activeData.totalReviews || reviewCount || 6000;
-      const themeCount = activeData.themes ? activeData.themes.filter(t => t.cluster_id >= 0).length : 12;
-      const churnRate = (activeData.overallChurnRate !== undefined) ? activeData.overallChurnRate : 24.9;
-      const recsCount = activeData.recommendations ? activeData.recommendations.length : 3;
-
-      // Update KPIs based on analyzed data
-      if (kpiReviews) kpiReviews.textContent = totalReviews.toLocaleString();
-      if (kpiThemes) kpiThemes.textContent = themeCount.toString();
-      if (kpiChurn) kpiChurn.textContent = churnRate.toFixed(1) + '%';
-      if (kpiCitations) kpiCitations.textContent = '100.0%';
-
-      // Update Nav Tab Badges
-      const tabClustersBadge = document.getElementById('tab-clusters-count');
-      if (tabClustersBadge) {
-        tabClustersBadge.textContent = `${themeCount} ${themeCount === 1 ? 'Cluster' : 'Clusters'}`;
-      }
-      const tabRecsBadge = document.getElementById('tab-recs-count');
-      if (tabRecsBadge) {
-        tabRecsBadge.textContent = `${recsCount} ${recsCount === 1 ? 'Initiative' : 'Initiatives'}`;
-      }
-
-      const dashMetaText = document.getElementById('dash-meta-text');
-      if (dashMetaText) {
-        dashMetaText.textContent = `Analyzed from ${totalReviews.toLocaleString()} customer review${totalReviews === 1 ? '' : 's'} • 100% Verbatim Grounded Citations`;
-      }
-
-      // Render fresh cards
-      renderThemes();
-      renderRoadmap();
-
-      // Smooth switch to Dashboard
-      switchView('view-dashboard');
-    }, 2550);
+    // Final short confirmation pause then load dashboard
+    pipelineTimers.push(setTimeout(() => {
+      finishPipelineSteps(reviewCount);
+    }, (STEP_DURATION * 5) + 800));
   }
 
   function setStepRunning(stepEl) {

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.2">
+  <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body>
 
@@ -122,52 +122,138 @@
         </div>
         <h2 class="processing-title">Voice of Customer Copilot is Working</h2>
         <p class="processing-sub" id="processing-dataset-desc">Ingesting feedback corpus and running algorithmic intelligence pipeline...</p>
+        <div class="processing-actions-bar">
+          <button class="btn-skip-pipeline" onclick="skipToDashboard()" title="Jump straight to results">
+            <span>Skip to Dashboard</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
 
-        <!-- Progressive Pipeline Steps -->
+        <!-- Progressive Pipeline Steps with Dynamic Backend Execution Cards -->
         <div class="pipeline-steps-card">
-          <div class="step-row" id="step-1">
-            <div class="step-icon">1</div>
-            <div class="step-content">
-              <strong>Data Normalization & Deduplication</strong>
-              <span>Stripping bot spam, near-duplicate rants, and normalizing whitespace</span>
+          <!-- STEP 1 -->
+          <div class="step-wrapper" id="step-wrapper-1">
+            <div class="step-row" id="step-1">
+              <div class="step-icon">1</div>
+              <div class="step-content">
+                <strong>Data Normalization & Deduplication</strong>
+                <span>Stripping bot spam, near-duplicate rants, and normalizing whitespace</span>
+              </div>
+              <div class="step-badge">Running</div>
             </div>
-            <div class="step-badge">Running</div>
+            <div class="step-detail-card active" id="step-detail-1">
+              <div class="detail-card-header">
+                <span class="detail-pulse-dot"></span>
+                <span class="detail-label">BACKEND EXECUTION: DATA HYGIENE & NORMALIZATION</span>
+              </div>
+              <p class="detail-text">
+                Parsing raw customer feedback, stripping HTML tags, purging duplicate bot clones, and standardizing character casing and multi-line breaks.
+              </p>
+              <div class="detail-telemetry-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Deduplicating feedback corpus • Text normalized</span>
+              </div>
+            </div>
           </div>
 
-          <div class="step-row" id="step-2">
-            <div class="step-icon">2</div>
-            <div class="step-content">
-              <strong>Language & Nuance Classification</strong>
-              <span>Tagging English, Hindi (Devanagari), and colloquial Hinglish expressions</span>
+          <!-- STEP 2 -->
+          <div class="step-wrapper" id="step-wrapper-2">
+            <div class="step-row" id="step-2">
+              <div class="step-icon">2</div>
+              <div class="step-content">
+                <strong>Language & Nuance Classification</strong>
+                <span>Tagging English, Hindi (Devanagari), and colloquial Hinglish expressions</span>
+              </div>
+              <div class="step-badge">Pending</div>
             </div>
-            <div class="step-badge">Pending</div>
+            <div class="step-detail-card" id="step-detail-2">
+              <div class="detail-card-header">
+                <span class="detail-pulse-dot"></span>
+                <span class="detail-label">BACKEND EXECUTION: MULTI-LINGUAL NLP CLASSIFIER</span>
+              </div>
+              <p class="detail-text">
+                Detecting linguistic distribution across English, colloquial Hinglish ('paise kat gaye', 'bekar service'), and Hindi Devanagari. Resolving sarcasm and localized customer expressions.
+              </p>
+              <div class="detail-telemetry-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Hinglish & sentiment nuances mapped • Unicode parsed</span>
+              </div>
+            </div>
           </div>
 
-          <div class="step-row" id="step-3">
-            <div class="step-icon">3</div>
-            <div class="step-content">
-              <strong>Unsupervised Theme Clustering</strong>
-              <span>Computing dense text embeddings & fitting HDBSCAN density clusters</span>
+          <!-- STEP 3 -->
+          <div class="step-wrapper" id="step-wrapper-3">
+            <div class="step-row" id="step-3">
+              <div class="step-icon">3</div>
+              <div class="step-content">
+                <strong>Unsupervised Theme Clustering</strong>
+                <span>Computing dense text embeddings & fitting HDBSCAN density clusters</span>
+              </div>
+              <div class="step-badge">Pending</div>
             </div>
-            <div class="step-badge">Pending</div>
+            <div class="step-detail-card" id="step-detail-3">
+              <div class="detail-card-header">
+                <span class="detail-pulse-dot"></span>
+                <span class="detail-label">BACKEND EXECUTION: DENSITY-BASED HDBSCAN CLUSTERING</span>
+              </div>
+              <p class="detail-text">
+                Generating 384-dimensional dense semantic sentence embeddings. Running density clustering to group core friction patterns into coherent themes while isolating random one-off noise.
+              </p>
+              <div class="detail-telemetry-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Dense friction clusters converged • Outlier noise preserved</span>
+              </div>
+            </div>
           </div>
 
-          <div class="step-row" id="step-4">
-            <div class="step-icon">4</div>
-            <div class="step-content">
-              <strong>Verbatim Quote & Churn Signal Extraction</strong>
-              <span>Extracting word-for-word quotes and scoring customer churn severity</span>
+          <!-- STEP 4 -->
+          <div class="step-wrapper" id="step-wrapper-4">
+            <div class="step-row" id="step-4">
+              <div class="step-icon">4</div>
+              <div class="step-content">
+                <strong>Verbatim Quote & Churn Signal Extraction</strong>
+                <span>Extracting word-for-word quotes and scoring customer churn severity</span>
+              </div>
+              <div class="step-badge">Pending</div>
             </div>
-            <div class="step-badge">Pending</div>
+            <div class="step-detail-card" id="step-detail-4">
+              <div class="detail-card-header">
+                <span class="detail-pulse-dot"></span>
+                <span class="detail-label">BACKEND EXECUTION: VERBATIM AUDIT & CHURN SCORING</span>
+              </div>
+              <p class="detail-text">
+                Asserting character-for-character verbatim grounding for customer quotes with zero AI hallucination. Scoring active churn signals ('uninstalled', 'worst app', 'switching to competitor').
+              </p>
+              <div class="detail-telemetry-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>100% Verbatim quotes anchored • Attrition intent scored</span>
+              </div>
+            </div>
           </div>
 
-          <div class="step-row" id="step-5">
-            <div class="step-icon">5</div>
-            <div class="step-content">
-              <strong>Roadmap Synthesis & Verification</strong>
-              <span>Generating 3 evidence-backed roadmap items with 100% citation assertions</span>
+          <!-- STEP 5 -->
+          <div class="step-wrapper" id="step-wrapper-5">
+            <div class="step-row" id="step-5">
+              <div class="step-icon">5</div>
+              <div class="step-content">
+                <strong>Roadmap Synthesis & Verification</strong>
+                <span>Generating evidence-backed roadmap items with 100% citation assertions</span>
+              </div>
+              <div class="step-badge">Pending</div>
             </div>
-            <div class="step-badge">Pending</div>
+            <div class="step-detail-card" id="step-detail-5">
+              <div class="detail-card-header">
+                <span class="detail-pulse-dot"></span>
+                <span class="detail-label">BACKEND EXECUTION: STRATEGIC ROADMAP SYNTHESIS</span>
+              </div>
+              <p class="detail-text">
+                Transforming top customer friction clusters into prioritized Linear-style product roadmap initiatives with North Star metrics, engineering trade-offs, and verified quote citations.
+              </p>
+              <div class="detail-telemetry-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>3 Prioritized product initiatives synthesized • Dashboard ready</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -299,7 +385,7 @@
   </main>
 
   <!-- Scripts -->
-  <script src="data_bundle.js?v=2.2"></script>
-  <script src="app.js?v=2.2"></script>
+  <script src="data_bundle.js?v=2.3"></script>
+  <script src="app.js?v=2.3"></script>
 </body>
 </html>
