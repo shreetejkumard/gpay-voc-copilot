@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.2">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
       <div class="upload-hero">
         <h1 class="hero-title">Voice of Customer Copilot</h1>
         <p class="hero-subtitle">
-          Drop in raw feedback from any channel—Play Store reviews, support tickets, sales calls, or user interviews—and let AI cluster customer pain points, flag churn, and synthesize your next roadmap.
+          Drop in raw feedback from any channel—customer reviews, support tickets, sales calls, or user interviews—and let AI cluster customer pain points, flag churn, and synthesize your next roadmap.
         </p>
       </div>
 
@@ -91,9 +91,11 @@
       <!-- Trial / Evaluation Note Box at Bottom -->
       <div class="trial-note-card">
         <div class="trial-note-header">
-          <span class="note-icon">💡</span>
+          <div class="note-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
           <div>
-            <p>If you don't have a feedback file ready, test our full corpus of <strong>6,000 real customer feedback items</strong> collected across Play Store reviews (4,000) and Subreddit discussions (2,000).</p>
+            <p>If you don't have a feedback file ready, test our full benchmark corpus of <strong>6,000 real customer feedback items</strong>.</p>
           </div>
         </div>
         <div class="trial-actions">
@@ -114,7 +116,9 @@
       <div class="processing-container">
         <div class="processing-spinner-box">
           <div class="radar-pulse"></div>
-          <div class="spinner-core">⚡</div>
+          <div class="spinner-core">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
         </div>
         <h2 class="processing-title">Voice of Customer Copilot is Working</h2>
         <p class="processing-sub" id="processing-dataset-desc">Ingesting feedback corpus and running algorithmic intelligence pipeline...</p>
@@ -180,7 +184,7 @@
             <span>Customer Operations Intelligence</span>
           </div>
           <h2 class="dash-title">Voice of Customer Copilot Dashboard</h2>
-          <div class="dash-sub" id="dash-meta-text">Analyzed from 6,000 customer reviews (Play Store + Reddit) • 100% Verbatim Grounded Citations</div>
+          <div class="dash-sub" id="dash-meta-text">Analyzed from 6,000 customer reviews • 100% Verbatim Grounded Citations</div>
         </div>
         <div class="dash-header-actions">
           <button class="btn btn-secondary-clean" onclick="resetToUpload()">
@@ -193,31 +197,37 @@
       <!-- Executive KPI Cards Bar -->
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-icon-wrap kpi-blue">📊</div>
+          <div class="kpi-icon-wrap kpi-blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
           <div class="kpi-body">
             <div class="kpi-category">TOTAL REVIEWS</div>
             <div class="kpi-value" id="kpi-reviews">6,000</div>
-            <div class="kpi-sub">4,000 Play Store + 2,000 Reddit</div>
           </div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-icon-wrap kpi-purple">🧠</div>
+          <div class="kpi-icon-wrap kpi-purple">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
           <div class="kpi-body">
             <div class="kpi-category">CLUSTERED THEMES</div>
             <div class="kpi-value" id="kpi-themes">12</div>
-            <div class="kpi-sub">HDBSCAN (+ 584 Noise Outliers)</div>
           </div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-icon-wrap kpi-red">🚨</div>
+          <div class="kpi-icon-wrap kpi-red">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
           <div class="kpi-body">
             <div class="kpi-category">ACTIVE CHURN RISK</div>
             <div class="kpi-value kpi-red-text" id="kpi-churn">24.9%</div>
-            <div class="kpi-sub">Users citing uninstalls/switching</div>
+            <div class="kpi-sub">Users citing uninstalls / switching</div>
           </div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-icon-wrap kpi-green">🛡️</div>
+          <div class="kpi-icon-wrap kpi-green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
           <div class="kpi-body">
             <div class="kpi-category">CITATION VERIFICATION</div>
             <div class="kpi-value kpi-green-text" id="kpi-citations">100.0%</div>
@@ -230,20 +240,12 @@
       <div class="nav-tabs-wrapper">
         <nav class="nav-tabs">
           <button class="nav-tab active" data-tab="tab-themes" onclick="switchDashTab('tab-themes', this)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            Top Pain Points & Attached Quotes
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            Top Customer Pain Points <span class="badge-mini" id="tab-clusters-count">12 Clusters</span>
           </button>
           <button class="nav-tab" data-tab="tab-roadmap" onclick="switchDashTab('tab-roadmap', this)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            What to Put on the Roadmap <span class="badge-mini">3 Items</span>
-          </button>
-          <button class="nav-tab" data-tab="tab-badgood" onclick="switchDashTab('tab-badgood', this)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
-            The APM Difference (Bad vs. Good Output)
-          </button>
-          <button class="nav-tab" data-tab="tab-evals" onclick="switchDashTab('tab-evals', this)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            AI Safety & Evals Suite <span class="badge-mini badge-green">100% Pass</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Strategic Product Roadmap <span class="badge-mini" id="tab-recs-count">3 Initiatives</span>
           </button>
         </nav>
       </div>
@@ -259,15 +261,15 @@
             <div class="filter-group">
               <label>Sort By:</label>
               <select id="dash-sort" onchange="filterThemes()">
-                <option value="priority">🔥 Combined Urgency (Volume + Churn)</option>
-                <option value="volume">📦 Highest Feedback Volume</option>
-                <option value="churn">🚨 Highest Churn Risk (%)</option>
+                <option value="priority">Combined Urgency (Volume + Churn)</option>
+                <option value="volume">Highest Feedback Volume</option>
+                <option value="churn">Highest Churn Risk (%)</option>
               </select>
             </div>
             <div class="filter-pills">
               <button class="filter-pill active" data-filter="all" onclick="setThemeFilter('all', this)">All Themes</button>
-              <button class="filter-pill" data-filter="p0" onclick="setThemeFilter('p0', this)">🚨 P0 Attrition Only</button>
-              <button class="filter-pill" data-filter="high-conf" onclick="setThemeFilter('high-conf', this)">🛡️ High Confidence Only</button>
+              <button class="filter-pill" data-filter="p0" onclick="setThemeFilter('p0', this)">P0 Attrition Only</button>
+              <button class="filter-pill" data-filter="high-conf" onclick="setThemeFilter('high-conf', this)">High Confidence Only</button>
             </div>
           </div>
         </div>
@@ -284,168 +286,11 @@
       <!-- TAB 2: ROADMAP RECOMMENDATIONS -->
       <div id="tab-roadmap" class="dash-tab-pane">
         <div class="section-intro">
-          <h2>Evidence-Backed Product Roadmap Proposals</h2>
-          <p>Every proposal explicitly cites the exact customer review counts, active churn percentage, measurable North Star KPIs, and engineering risks. Zero recommendations without source citations.</p>
+          <h2>Strategic Product Roadmap Proposals</h2>
+          <p>Prioritized product initiatives synthesized from clustered friction data, explicitly citing customer review counts, active churn percentage, North Star metrics, and engineering risks.</p>
         </div>
         <div class="roadmap-grid" id="roadmap-container">
           <!-- Rendered dynamically -->
-        </div>
-      </div>
-
-      <!-- TAB 3: BAD VS GOOD OUTPUT (APM CASE STUDY) -->
-      <div id="tab-badgood" class="dash-tab-pane">
-        <div class="section-intro">
-          <h2>The APM Standard: Bad Output vs. Good Output</h2>
-          <p>Why this copilot is built for real Product Managers making high-stakes roadmap decisions, not just as a generic text summarizer.</p>
-        </div>
-
-        <div class="comparison-container">
-          <!-- Bad Output Card -->
-          <div class="comparison-card bad-card">
-            <div class="comparison-header">
-              <span class="badge-bad">❌ The Naive "Bad" Output</span>
-              <span class="comp-source">Generic LLM Summarizer</span>
-            </div>
-            <div class="comp-quote-box">
-              <em>"Users are unhappy with payments and say the app has server issues. We should fix the payment flow to improve customer satisfaction."</em>
-            </div>
-            <div class="comp-critique">
-              <strong>Why this fails in an executive review:</strong>
-              <ul>
-                <li><strong>Zero Quantification:</strong> How many users? 5? 5,000? A PM cannot allocate engineering sprints without numbers.</li>
-                <li><strong>No Root Cause:</strong> Is the issue merchant checkout? Bank switch timeouts? Duplicate debits?</li>
-                <li><strong>Zero Attributability:</strong> "Based on what?" No review IDs, quotes, or timestamps provided.</li>
-                <li><strong>Vague KPI:</strong> "Improve customer satisfaction" is unmeasurable.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Good Output Card -->
-          <div class="comparison-card good-card">
-            <div class="comparison-header">
-              <span class="badge-good">✅ The Grounded "Good" Output</span>
-              <span class="comp-source">Our VoC Copilot Output</span>
-            </div>
-            <div class="comp-quote-box">
-              <strong>Theme #2: Bank Timeouts & Delayed Refunds Driving Active Churn</strong>
-              <p><em>"68 user reviews (100% churn rate) cite money debited during bank server timeouts with refunds taking &gt;7 days, driving users to switch to competitor soundbox QR codes."</em></p>
-              <div class="comp-citations">
-                <span>Sources: <code>rd_1108</code>, <code>rd_0975</code>, <code>rd_0758</code> (100% Verbatim Verified)</span>
-              </div>
-            </div>
-            <div class="comp-critique">
-              <strong>Why this wins in an executive review:</strong>
-              <ul>
-                <li><strong>Concrete Evidence:</strong> Supported by 68 real reviews and 100% active churn intent.</li>
-                <li><strong>Specific Root Cause:</strong> Peak-hour server timeouts causing &gt;7 day refund delays.</li>
-                <li><strong>Traceable Citations:</strong> Character-for-character verbatim quotes linked to verifiable IDs.</li>
-                <li><strong>Measurable North Star Metric:</strong> Reduce bank-timeout failure rates by 30% and clear 80% of stuck refunds in T+1 day.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TAB 4: EVALS SUITE -->
-      <div id="tab-evals" class="dash-tab-pane">
-        <div class="section-intro">
-          <h2>Production Evaluations & AI Safety Scorecard</h2>
-          <p>Mathematical proof that every quote is grounded, zero hallucinations occurred, and edge cases are guarded.</p>
-        </div>
-
-        <div class="evals-grid">
-          <div class="eval-card">
-            <div class="eval-header">
-              <div>
-                <h3>1. Verbatim Citation Audit</h3>
-                <p>Automated substring matching asserting quotes exist word-for-word in cited reviews.</p>
-              </div>
-              <div class="eval-score-badge">100.0% Pass</div>
-            </div>
-            <div class="eval-metric-row">
-              <div>Audited Quotes & References: <strong>47</strong></div>
-              <div>Failed Assertions: <strong>0</strong></div>
-              <div>Hallucinated IDs: <strong>0</strong></div>
-            </div>
-            <div class="eval-details-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Target / Theme</th>
-                    <th>Review ID</th>
-                    <th>Status</th>
-                    <th>Verification Note</th>
-                  </tr>
-                </thead>
-                <tbody id="citation-sample-body">
-                  <!-- Rendered dynamically -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="eval-card">
-            <div class="eval-header">
-              <div>
-                <h3>2. Failure Mode & Edge Case Stress Tests</h3>
-                <p>Verifying model behavior across Indian fintech edge cases (sarcasm, Hinglish, bot spam, tiny clusters).</p>
-              </div>
-              <div class="eval-score-badge">4/4 Passed</div>
-            </div>
-            <div class="eval-details-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Test ID</th>
-                    <th>Edge Case Category</th>
-                    <th>Observed System Behavior</th>
-                    <th>Verdict</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>FM_01</code></td>
-                    <td><strong>Sarcasm Handling</strong></td>
-                    <td>Flagged as severe customer friction despite surface words ("Great", "Thanks")</td>
-                    <td><span class="badge-pass">PASS</span></td>
-                  </tr>
-                  <tr>
-                    <td><code>FM_02</code></td>
-                    <td><strong>Hinglish Processing</strong></td>
-                    <td>Tagged language as 'hinglish' and caught churn triggers ('paise kat gaye', 'uninstalled')</td>
-                    <td><span class="badge-pass">PASS</span></td>
-                  </tr>
-                  <tr>
-                    <td><code>FM_03</code></td>
-                    <td><strong>Duplicate Spam</strong></td>
-                    <td>Normalized hashing purged 100% of duplicate bot promotional clones</td>
-                    <td><span class="badge-pass">PASS</span></td>
-                  </tr>
-                  <tr>
-                    <td><code>FM_04</code></td>
-                    <td><strong>Tiny Cluster Guardrail</strong></td>
-                    <td>Automatically attached 'Low Confidence' badge when cluster size &lt; 35</td>
-                    <td><span class="badge-pass">PASS</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Google Sheets Export Box -->
-        <div class="sheets-export-box">
-          <div class="sheets-info">
-            <h3>📥 Ready-to-Paste Google Sheets Portfolio Tabs</h3>
-            <p>Exported 5 CSV tabs detailing the data cleaning funnel, citation check, theme accuracy, failure modes, and fixes for your APM portfolio interview.</p>
-          </div>
-          <div class="sheets-btn-group">
-            <a href="evals/results/google_sheets_export/tab1_data_cleaning.csv" download class="btn-sheet">📄 Tab 1: Data Cleaning</a>
-            <a href="evals/results/google_sheets_export/tab2_citation_check.csv" download class="btn-sheet">📄 Tab 2: Citation Check</a>
-            <a href="evals/results/google_sheets_export/tab3_theme_accuracy.csv" download class="btn-sheet">📄 Tab 3: Theme Accuracy</a>
-            <a href="evals/results/google_sheets_export/tab4_failure_modes.csv" download class="btn-sheet">📄 Tab 4: Failure Modes</a>
-            <a href="evals/results/google_sheets_export/tab5_fixes_and_roadmap.csv" download class="btn-sheet">📄 Tab 5: Fixes & Roadmap</a>
-          </div>
         </div>
       </div>
 
@@ -454,7 +299,7 @@
   </main>
 
   <!-- Scripts -->
-  <script src="data_bundle.js"></script>
-  <script src="app.js"></script>
+  <script src="data_bundle.js?v=2.2"></script>
+  <script src="app.js?v=2.2"></script>
 </body>
 </html>

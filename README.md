@@ -144,8 +144,8 @@ Pre-formatted CSVs located in `evals/results/google_sheets_export/` ready to pas
 
 ```bash
 # 1. Clone & install
-git clone https://github.com/shreetejkumard/gpay-voc-copilot.git
-cd gpay-voc-copilot
+git clone https://github.com/shreetejkumard/voc-copilot.git
+cd voc-copilot
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -181,10 +181,3 @@ python3 -m http.server 8080
 3. Click **Add New...** → **Project** → select your repo.
 4. Click **Deploy** (zero build configuration needed).
 5. Vercel delivers a live HTTPS link in 15 seconds to include in your resume and portfolio!
-
----
-
-## 👤 Author
-**Shreetej Kumar Das**  
-*Google APM Candidate Portfolio Project*  
-GitHub: [@shreetejkumard](https://github.com/shreetejkumard) • Email: [shreetejkumard@gmail.com](mailto:shreetejkumard@gmail.com)

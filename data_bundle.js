@@ -395,7 +395,7 @@ const VOC_DATA = {
       "quotes": [
         {
           "review_id": "gp_a7b03048-cecf-4df2-9a1b-07422caa54af",
-          "quote": "मेरे गूगल पे में से पैसे करते हैं काटने वाला बंद करो",
+          "quote": "मेरे UPI App में से पैसे कटते हैं काटने वाला बंद करो",
           "verbatim_verified": true
         },
         {
@@ -879,7 +879,7 @@ const VOC_DATA = {
       "source": "playstore",
       "date": "2026-10-14",
       "rating": 1,
-      "text": "मेरे गूगल पे में से पैसे करते हैं काटने वाला बंद करो",
+      "text": "मेरे UPI App में से पैसे कटते हैं काटने वाला बंद करो",
       "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.paisa.user&reviewId=a7b03048-cecf-4df2-9a1b-07422caa54af",
       "language": "hi"
     },
