@@ -77,7 +77,7 @@ def generate_recommendation_for_theme(
         for _, r in sample_df.iterrows()
     ])
 
-    prompt = f"""You are a Group Product Manager for Google Pay (India).
+    prompt = f"""You are a Group Product Manager for UPI Payments (India).
 You need to convert raw customer feedback and churn signals into a concrete, evidence-backed roadmap proposal.
 
 Theme Context:

@@ -2,7 +2,7 @@
   {
     "test_id": "FM_01_SARCASM",
     "category": "sarcasm",
-    "text": "Great, another failed payment! Thanks Google Pay for making me look like an absolute fool at the restaurant counter while everyone watched. Truly world-class experience.",
+    "text": "Great, another failed payment! Thanks UPI App for making me look like an absolute fool at the restaurant counter while everyone watched. Truly world-class experience.",
     "expected_language": "en",
     "expected_is_churn": true,
     "expected_sentiment_risk": "high",
@@ -11,7 +11,7 @@
   {
     "test_id": "FM_02_HINGLISH",
     "category": "hinglish",
-    "text": "Bhai Google Pay se ₹500 transfer kiya dost ko via HDFC, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating wait 48 hours. Ghatiya service, uninstalled.",
+    "text": "Bhai UPI App se ₹500 transfer kiya dost ko via HDFC, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating wait 48 hours. Ghatiya service, uninstalled.",
     "expected_language": "hinglish",
     "expected_is_churn": true,
     "expected_sentiment_risk": "critical",
@@ -34,7 +34,7 @@
   {
     "test_id": "FM_04_TINY_CLUSTER",
     "category": "tiny_cluster",
-    "text": "Please bring tap to pay for Pixel Watch in India. WearOS GPay app is completely disabled here.",
+    "text": "Please bring tap to pay for Pixel Watch in India. WearOS UPI App app is completely disabled here.",
     "sample_cluster_size": 3,
     "expected_guardrail": "low_confidence_badge",
     "description": "Niche wearable feature request supported by only 3 reviews"

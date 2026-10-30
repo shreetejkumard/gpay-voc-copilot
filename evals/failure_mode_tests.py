@@ -1,7 +1,7 @@
 """
 Phase 7 Evaluation 3: Failure Mode & Edge Case Stress Testing
 Tests the pipeline against 4 critical edge cases common in Indian fintech feedback:
-1. Sarcasm Handling: "Great, another failed payment! Thanks Google Pay..."
+1. Sarcasm Handling: "Great, another failed payment! Thanks UPI App..."
    - Verifies system flags churn/friction despite positive surface words like "Great" and "Thanks".
 2. Hinglish Nuance: "Bhai paise kat gaye dost ko transfer karte time..."
    - Verifies accurate language detection ('hinglish') and colloquial churn keyword tagging.

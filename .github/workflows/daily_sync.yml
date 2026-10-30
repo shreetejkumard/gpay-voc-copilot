@@ -1,0 +1,88 @@
+name: Daily Voice of Customer Sync Pipeline
+
+on:
+  schedule:
+    # Runs automatically every day at 00:00 UTC (05:30 IST)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI for demo purposes
+
+jobs:
+  sync-customer-feedback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ingest Fresh Reviews (Play Store & Subreddits)
+        run: |
+          python scripts/collect_playstore.py
+          python scripts/load_reddit.py
+          python scripts/merge.py
+
+      - name: Clean & Tag Language Nuance
+        run: |
+          python scripts/clean.py
+
+      - name: Run Unsupervised Theme Clustering
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/cluster.py
+
+      - name: Name Themes & Extract Verbatim Quotes
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/name_themes.py
+
+      - name: Detect Churn Signals & Prioritize Themes
+        run: |
+          python scripts/churn.py
+
+      - name: Synthesize Grounded Roadmap Recommendations
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/recommend.py
+
+      - name: Run Evaluation Assertions (Target: 100% Citation Pass Rate)
+        run: |
+          python evals/citation_check.py
+          python evals/failure_mode_tests.py
+          python evals/export_all_sheets.py
+
+      - name: Rebuild Frontend Data Bundle
+        run: |
+          python -c "
+          import json
+          bundle = {
+              'themes': json.load(open('data/themes.json')),
+              'recommendations': json.load(open('data/recommendations.json')),
+              'cleaning_log': json.load(open('data/cleaning_log.json'))
+          }
+          with open('data_bundle.js', 'w', encoding='utf-8') as f:
+              f.write('const VOC_DATA = ' + json.dumps(bundle, indent=2, ensure_ascii=False) + ';\n')
+          "
+
+      - name: Commit & Push Fresh Insights Back to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ evals/results/ data_bundle.js
+          if git diff --staged --quiet; then
+            echo "No changes in customer feedback today."
+          else
+            git commit -m "chore(cron): daily automated VoC customer feedback sync [skip ci]"
+            git push origin main
+          fi

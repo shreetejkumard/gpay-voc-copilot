@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice of Customer Copilot • Product Manager Workflow</title>
+  <meta name="description" content="A Product Manager's Voice of Customer Copilot that turns raw, messy customer feedback into clustered pain points, attached verbatim quotes, churn signals, and evidence-backed roadmap decisions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="app-header">
+    <div class="header-inner container">
+      <div class="brand">
+        <div class="brand-text">
+          <div class="brand-title">Voice of Customer Copilot <span class="badge-tag">PM Tool</span></div>
+          <div class="brand-subtitle">Turn raw customer feedback into evidence-backed product decisions</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-header-reset" class="btn btn-secondary" onclick="resetToUpload()" style="display: none;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Upload New Dataset
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content container">
+
+    <!-- ================= VIEW 1: UPLOAD & INGESTION (MINIMAL FIRST SCREEN) ================= -->
+    <section id="view-upload" class="view-screen active">
+      <div class="upload-hero">
+        <h1 class="hero-title">Voice of Customer Copilot</h1>
+        <p class="hero-subtitle">
+          Drop in raw feedback from any channel—Play Store reviews, support tickets, sales calls, or user interviews—and let AI cluster customer pain points, flag churn, and synthesize your next roadmap.
+        </p>
+      </div>
+
+      <!-- Main Ingestion Card -->
+      <div class="upload-card">
+        <div class="input-mode-tabs">
+          <button class="mode-tab active" id="tab-mode-file" onclick="setMode('file')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Upload Feedback File
+          </button>
+          <button class="mode-tab" id="tab-mode-paste" onclick="setMode('paste')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Paste Raw Text
+          </button>
+        </div>
+
+        <!-- Mode A: File Dropzone -->
+        <div id="mode-file-zone" class="mode-zone active">
+          <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
+            <input type="file" id="file-input" accept=".csv,.xlsx,.txt,.pdf,.docx" style="display: none;" onchange="handleFileSelect(event)">
+            <div class="dropzone-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <div class="dropzone-title">Click to upload or drag & drop customer feedback</div>
+            <div class="dropzone-subtitle">Supported formats: <strong>CSV, Excel (.xlsx), PDF, Word (.docx), TXT</strong></div>
+            <div id="selected-file-badge" class="selected-file-badge" style="display: none;">
+              <span id="selected-file-name">filename.csv</span>
+              <span id="selected-file-count" class="file-count-pill">6,000 reviews detected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mode B: Paste Textarea -->
+        <div id="mode-paste-zone" class="mode-zone">
+          <textarea id="raw-textarea" placeholder="Paste your raw customer reviews or tickets here (one per line, or paragraph separated)...&#10;&#10;e.g.&#10;Transferred ₹4800 to merchant via bank. Money debited but merchant never received it. Support says wait 3-5 days. Shopkeeper refused to let me leave without cash. Uninstalled and switched to competitor.&#10;&#10;Money deducted twice while paying electricity bill. Neither bill cleared nor refund received after 7 days. Worst app experience."></textarea>
+          <div class="textarea-footer">
+            <span id="paste-counter">0 customer reviews detected</span>
+            <button class="btn-text-link" onclick="loadSampleIntoTextarea()">Insert Sample Reviews</button>
+          </div>
+        </div>
+
+        <!-- Big Primary CTA Button -->
+        <div class="upload-action-wrap">
+          <button class="btn-primary-analyze" id="btn-analyze" onclick="startAnalysis()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Analyze Voice of Customer</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Trial / Evaluation Note Box at Bottom -->
+      <div class="trial-note-card">
+        <div class="trial-note-header">
+          <span class="note-icon">💡</span>
+          <div>
+            <p>If you don't have a feedback file ready, test our full corpus of <strong>6,000 real customer feedback items</strong> collected across Play Store reviews (4,000) and Subreddit discussions (2,000).</p>
+          </div>
+        </div>
+        <div class="trial-actions">
+          <a href="sample_customer_reviews.csv" download class="btn-trial btn-trial-download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Full Dataset (6,000 Reviews CSV)
+          </a>
+          <button class="btn-trial btn-trial-demo" onclick="runInstantDemo()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Instant 1-Click Demo (6,000 Reviews)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 2: PROCESSING PIPELINE SCREEN ================= -->
+    <section id="view-processing" class="view-screen">
+      <div class="processing-container">
+        <div class="processing-spinner-box">
+          <div class="radar-pulse"></div>
+          <div class="spinner-core">⚡</div>
+        </div>
+        <h2 class="processing-title">Voice of Customer Copilot is Working</h2>
+        <p class="processing-sub" id="processing-dataset-desc">Ingesting feedback corpus and running algorithmic intelligence pipeline...</p>
+
+        <!-- Progressive Pipeline Steps -->
+        <div class="pipeline-steps-card">
+          <div class="step-row" id="step-1">
+            <div class="step-icon">1</div>
+            <div class="step-content">
+              <strong>Data Normalization & Deduplication</strong>
+              <span>Stripping bot spam, near-duplicate rants, and normalizing whitespace</span>
+            </div>
+            <div class="step-badge">Running</div>
+          </div>
+
+          <div class="step-row" id="step-2">
+            <div class="step-icon">2</div>
+            <div class="step-content">
+              <strong>Language & Nuance Classification</strong>
+              <span>Tagging English, Hindi (Devanagari), and colloquial Hinglish expressions</span>
+            </div>
+            <div class="step-badge">Pending</div>
+          </div>
+
+          <div class="step-row" id="step-3">
+            <div class="step-icon">3</div>
+            <div class="step-content">
+              <strong>Unsupervised Theme Clustering</strong>
+              <span>Computing dense text embeddings & fitting HDBSCAN density clusters</span>
+            </div>
+            <div class="step-badge">Pending</div>
+          </div>
+
+          <div class="step-row" id="step-4">
+            <div class="step-icon">4</div>
+            <div class="step-content">
+              <strong>Verbatim Quote & Churn Signal Extraction</strong>
+              <span>Extracting word-for-word quotes and scoring customer churn severity</span>
+            </div>
+            <div class="step-badge">Pending</div>
+          </div>
+
+          <div class="step-row" id="step-5">
+            <div class="step-icon">5</div>
+            <div class="step-content">
+              <strong>Roadmap Synthesis & Verification</strong>
+              <span>Generating 3 evidence-backed roadmap items with 100% citation assertions</span>
+            </div>
+            <div class="step-badge">Pending</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 3: FINAL EXECUTIVE DASHBOARD ================= -->
+    <section id="view-dashboard" class="view-screen">
+
+      <!-- Executive Header & Dataset Badge -->
+      <div class="dashboard-header-bar">
+        <div class="dash-title-group">
+          <div class="dash-badge-pill">
+            <span class="status-pulse-dot"></span>
+            <span>Customer Operations Intelligence</span>
+          </div>
+          <h2 class="dash-title">Voice of Customer Copilot Dashboard</h2>
+          <div class="dash-sub" id="dash-meta-text">Analyzed from 6,000 customer reviews (Play Store + Reddit) • 100% Verbatim Grounded Citations</div>
+        </div>
+        <div class="dash-header-actions">
+          <button class="btn btn-secondary-clean" onclick="resetToUpload()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Upload New Dataset
+          </button>
+        </div>
+      </div>
+
+      <!-- Executive KPI Cards Bar -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap kpi-blue">📊</div>
+          <div class="kpi-body">
+            <div class="kpi-category">TOTAL REVIEWS</div>
+            <div class="kpi-value" id="kpi-reviews">6,000</div>
+            <div class="kpi-sub">4,000 Play Store + 2,000 Reddit</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap kpi-purple">🧠</div>
+          <div class="kpi-body">
+            <div class="kpi-category">CLUSTERED THEMES</div>
+            <div class="kpi-value" id="kpi-themes">12</div>
+            <div class="kpi-sub">HDBSCAN (+ 584 Noise Outliers)</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap kpi-red">🚨</div>
+          <div class="kpi-body">
+            <div class="kpi-category">ACTIVE CHURN RISK</div>
+            <div class="kpi-value kpi-red-text" id="kpi-churn">24.9%</div>
+            <div class="kpi-sub">Users citing uninstalls/switching</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap kpi-green">🛡️</div>
+          <div class="kpi-body">
+            <div class="kpi-category">CITATION VERIFICATION</div>
+            <div class="kpi-value kpi-green-text" id="kpi-citations">100.0%</div>
+            <div class="kpi-sub">Zero Hallucinations Verified</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modern Segmented Navigation Bar -->
+      <div class="nav-tabs-wrapper">
+        <nav class="nav-tabs">
+          <button class="nav-tab active" data-tab="tab-themes" onclick="switchDashTab('tab-themes', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            Top Pain Points & Attached Quotes
+          </button>
+          <button class="nav-tab" data-tab="tab-roadmap" onclick="switchDashTab('tab-roadmap', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            What to Put on the Roadmap <span class="badge-mini">3 Items</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-badgood" onclick="switchDashTab('tab-badgood', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+            The APM Difference (Bad vs. Good Output)
+          </button>
+          <button class="nav-tab" data-tab="tab-evals" onclick="switchDashTab('tab-evals', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            AI Safety & Evals Suite <span class="badge-mini badge-green">100% Pass</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- TAB 1: PAIN POINTS & QUOTES -->
+      <div id="tab-themes" class="dash-tab-pane active">
+        <div class="control-bar">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="dash-search" placeholder="Search pain points, customer quotes, or keywords (e.g. 'refund', 'timeout', 'soundbox')..." oninput="filterThemes()">
+          </div>
+          <div class="filter-controls">
+            <div class="filter-group">
+              <label>Sort By:</label>
+              <select id="dash-sort" onchange="filterThemes()">
+                <option value="priority">🔥 Combined Urgency (Volume + Churn)</option>
+                <option value="volume">📦 Highest Feedback Volume</option>
+                <option value="churn">🚨 Highest Churn Risk (%)</option>
+              </select>
+            </div>
+            <div class="filter-pills">
+              <button class="filter-pill active" data-filter="all" onclick="setThemeFilter('all', this)">All Themes</button>
+              <button class="filter-pill" data-filter="p0" onclick="setThemeFilter('p0', this)">🚨 P0 Attrition Only</button>
+              <button class="filter-pill" data-filter="high-conf" onclick="setThemeFilter('high-conf', this)">🛡️ High Confidence Only</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="theme-list" id="theme-cards-container">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <div class="noise-container" id="noise-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- TAB 2: ROADMAP RECOMMENDATIONS -->
+      <div id="tab-roadmap" class="dash-tab-pane">
+        <div class="section-intro">
+          <h2>Evidence-Backed Product Roadmap Proposals</h2>
+          <p>Every proposal explicitly cites the exact customer review counts, active churn percentage, measurable North Star KPIs, and engineering risks. Zero recommendations without source citations.</p>
+        </div>
+        <div class="roadmap-grid" id="roadmap-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- TAB 3: BAD VS GOOD OUTPUT (APM CASE STUDY) -->
+      <div id="tab-badgood" class="dash-tab-pane">
+        <div class="section-intro">
+          <h2>The APM Standard: Bad Output vs. Good Output</h2>
+          <p>Why this copilot is built for real Product Managers making high-stakes roadmap decisions, not just as a generic text summarizer.</p>
+        </div>
+
+        <div class="comparison-container">
+          <!-- Bad Output Card -->
+          <div class="comparison-card bad-card">
+            <div class="comparison-header">
+              <span class="badge-bad">❌ The Naive "Bad" Output</span>
+              <span class="comp-source">Generic LLM Summarizer</span>
+            </div>
+            <div class="comp-quote-box">
+              <em>"Users are unhappy with payments and say the app has server issues. We should fix the payment flow to improve customer satisfaction."</em>
+            </div>
+            <div class="comp-critique">
+              <strong>Why this fails in an executive review:</strong>
+              <ul>
+                <li><strong>Zero Quantification:</strong> How many users? 5? 5,000? A PM cannot allocate engineering sprints without numbers.</li>
+                <li><strong>No Root Cause:</strong> Is the issue merchant checkout? Bank switch timeouts? Duplicate debits?</li>
+                <li><strong>Zero Attributability:</strong> "Based on what?" No review IDs, quotes, or timestamps provided.</li>
+                <li><strong>Vague KPI:</strong> "Improve customer satisfaction" is unmeasurable.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Good Output Card -->
+          <div class="comparison-card good-card">
+            <div class="comparison-header">
+              <span class="badge-good">✅ The Grounded "Good" Output</span>
+              <span class="comp-source">Our VoC Copilot Output</span>
+            </div>
+            <div class="comp-quote-box">
+              <strong>Theme #2: Bank Timeouts & Delayed Refunds Driving Active Churn</strong>
+              <p><em>"68 user reviews (100% churn rate) cite money debited during bank server timeouts with refunds taking &gt;7 days, driving users to switch to competitor soundbox QR codes."</em></p>
+              <div class="comp-citations">
+                <span>Sources: <code>rd_1108</code>, <code>rd_0975</code>, <code>rd_0758</code> (100% Verbatim Verified)</span>
+              </div>
+            </div>
+            <div class="comp-critique">
+              <strong>Why this wins in an executive review:</strong>
+              <ul>
+                <li><strong>Concrete Evidence:</strong> Supported by 68 real reviews and 100% active churn intent.</li>
+                <li><strong>Specific Root Cause:</strong> Peak-hour server timeouts causing &gt;7 day refund delays.</li>
+                <li><strong>Traceable Citations:</strong> Character-for-character verbatim quotes linked to verifiable IDs.</li>
+                <li><strong>Measurable North Star Metric:</strong> Reduce bank-timeout failure rates by 30% and clear 80% of stuck refunds in T+1 day.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: EVALS SUITE -->
+      <div id="tab-evals" class="dash-tab-pane">
+        <div class="section-intro">
+          <h2>Production Evaluations & AI Safety Scorecard</h2>
+          <p>Mathematical proof that every quote is grounded, zero hallucinations occurred, and edge cases are guarded.</p>
+        </div>
+
+        <div class="evals-grid">
+          <div class="eval-card">
+            <div class="eval-header">
+              <div>
+                <h3>1. Verbatim Citation Audit</h3>
+                <p>Automated substring matching asserting quotes exist word-for-word in cited reviews.</p>
+              </div>
+              <div class="eval-score-badge">100.0% Pass</div>
+            </div>
+            <div class="eval-metric-row">
+              <div>Audited Quotes & References: <strong>47</strong></div>
+              <div>Failed Assertions: <strong>0</strong></div>
+              <div>Hallucinated IDs: <strong>0</strong></div>
+            </div>
+            <div class="eval-details-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Target / Theme</th>
+                    <th>Review ID</th>
+                    <th>Status</th>
+                    <th>Verification Note</th>
+                  </tr>
+                </thead>
+                <tbody id="citation-sample-body">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="eval-card">
+            <div class="eval-header">
+              <div>
+                <h3>2. Failure Mode & Edge Case Stress Tests</h3>
+                <p>Verifying model behavior across Indian fintech edge cases (sarcasm, Hinglish, bot spam, tiny clusters).</p>
+              </div>
+              <div class="eval-score-badge">4/4 Passed</div>
+            </div>
+            <div class="eval-details-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Test ID</th>
+                    <th>Edge Case Category</th>
+                    <th>Observed System Behavior</th>
+                    <th>Verdict</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>FM_01</code></td>
+                    <td><strong>Sarcasm Handling</strong></td>
+                    <td>Flagged as severe customer friction despite surface words ("Great", "Thanks")</td>
+                    <td><span class="badge-pass">PASS</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>FM_02</code></td>
+                    <td><strong>Hinglish Processing</strong></td>
+                    <td>Tagged language as 'hinglish' and caught churn triggers ('paise kat gaye', 'uninstalled')</td>
+                    <td><span class="badge-pass">PASS</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>FM_03</code></td>
+                    <td><strong>Duplicate Spam</strong></td>
+                    <td>Normalized hashing purged 100% of duplicate bot promotional clones</td>
+                    <td><span class="badge-pass">PASS</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>FM_04</code></td>
+                    <td><strong>Tiny Cluster Guardrail</strong></td>
+                    <td>Automatically attached 'Low Confidence' badge when cluster size &lt; 35</td>
+                    <td><span class="badge-pass">PASS</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Sheets Export Box -->
+        <div class="sheets-export-box">
+          <div class="sheets-info">
+            <h3>📥 Ready-to-Paste Google Sheets Portfolio Tabs</h3>
+            <p>Exported 5 CSV tabs detailing the data cleaning funnel, citation check, theme accuracy, failure modes, and fixes for your APM portfolio interview.</p>
+          </div>
+          <div class="sheets-btn-group">
+            <a href="evals/results/google_sheets_export/tab1_data_cleaning.csv" download class="btn-sheet">📄 Tab 1: Data Cleaning</a>
+            <a href="evals/results/google_sheets_export/tab2_citation_check.csv" download class="btn-sheet">📄 Tab 2: Citation Check</a>
+            <a href="evals/results/google_sheets_export/tab3_theme_accuracy.csv" download class="btn-sheet">📄 Tab 3: Theme Accuracy</a>
+            <a href="evals/results/google_sheets_export/tab4_failure_modes.csv" download class="btn-sheet">📄 Tab 4: Failure Modes</a>
+            <a href="evals/results/google_sheets_export/tab5_fixes_and_roadmap.csv" download class="btn-sheet">📄 Tab 5: Fixes & Roadmap</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="data_bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

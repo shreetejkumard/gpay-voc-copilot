@@ -1,5 +1,5 @@
 """
-Configuration settings for Voice of Customer Copilot for Google Pay (India).
+Configuration settings for Voice of Customer Copilot for UPI Payments (India).
 Centralizes file paths, model configurations, data schemas, and churn detection heuristics.
 """
 
@@ -27,7 +27,7 @@ GEMINI_TEXT_MODEL = os.getenv("GEMINI_TEXT_MODEL", "gemini-3.5-flash-lite")
 GEMINI_EMBEDDING_MODEL = os.getenv("GEMINI_EMBEDDING_MODEL", "gemini-embedding-001")
 
 # Google Play Store scraping parameters
-PLAYSTORE_APP_ID = "com.google.android.apps.nbu.paisa.user"  # Google Pay India app package
+PLAYSTORE_APP_ID = "com.google.android.apps.nbu.paisa.user"  # UPI App India app package
 PLAYSTORE_LANG = "en"
 PLAYSTORE_COUNTRY = "in"
 TARGET_PLAYSTORE_REVIEWS = 4000  # Scaled up for higher volume (800 per star rating)

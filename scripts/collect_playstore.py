@@ -1,6 +1,6 @@
 """
 Phase 1: Data Collection - Google Play Store
-Pulls recent Google Pay (India, English) reviews with mixed ratings (1 to 5 stars).
+Pulls recent UPI App (India, English) reviews with mixed ratings (1 to 5 stars).
 Saves output strictly adhering to universal schema:
 id, source, date, rating, text, url, language
 """

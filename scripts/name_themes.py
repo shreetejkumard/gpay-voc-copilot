@@ -48,7 +48,7 @@ def extract_theme_metadata(client: genai.Client, cluster_id: int, cluster_df: pd
         for _, row in sample_df.iterrows()
     ])
 
-    prompt = f"""You are a Principal Product Manager at Google analyzing customer feedback for Google Pay (India).
+    prompt = f"""You are a Principal Product Manager at Google analyzing customer feedback for UPI Payments (India).
 Below is a sample of user reviews that belong to a single organic cluster (Cluster #{cluster_id}).
 
 Analyze these reviews and return a JSON object with:

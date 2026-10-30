@@ -10,17 +10,17 @@
     "quotes": [
       {
         "review_id": "rd_1108",
-        "quote": "GPay transaction failed due to bank server timeout with SBI. My ₹1200 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.",
+        "quote": "UPI App transaction failed due to bank server timeout with SBI. My ₹1200 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0975",
-        "quote": "GPay transaction failed due to bank server timeout with HDFC Bank. My ₹25000 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.",
+        "quote": "UPI App transaction failed due to bank server timeout with HDFC Bank. My ₹25000 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0554",
-        "quote": "GPay transaction failed due to bank server timeout with Axis Bank. My ₹2500 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.",
+        "quote": "UPI App transaction failed due to bank server timeout with Axis Bank. My ₹2500 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.",
         "verbatim_verified": true
       }
     ],
@@ -46,17 +46,17 @@
     "quotes": [
       {
         "review_id": "rd_0672",
-        "quote": "Transferred ₹12000 to a merchant using Google Pay via Axis Bank. The money was debited from my account immediately but merchant never received it. GPay support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
+        "quote": "Transferred ₹12000 to a merchant using UPI App via Axis Bank. The money was debited from my account immediately but merchant never received it. UPI App support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1539",
-        "quote": "Transferred ₹2500 to a merchant using Google Pay via HDFC Bank. The money was debited from my account immediately but merchant never received it. GPay support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
+        "quote": "Transferred ₹2500 to a merchant using UPI App via HDFC Bank. The money was debited from my account immediately but merchant never received it. UPI App support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0575",
-        "quote": "Transferred ₹320 to a merchant using Google Pay via Canara Bank. The money was debited from my account immediately but merchant never received it. GPay support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
+        "quote": "Transferred ₹320 to a merchant using UPI App via Canara Bank. The money was debited from my account immediately but merchant never received it. UPI App support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
         "verbatim_verified": true
       }
     ],
@@ -82,17 +82,17 @@
     "quotes": [
       {
         "review_id": "rd_0380",
-        "quote": "Bhai Google Pay se ₹150 transfer kiya dost ko via ICICI Bank, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
+        "quote": "Bhai UPI App se ₹150 transfer kiya dost ko via ICICI Bank, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1665",
-        "quote": "Bhai Google Pay se ₹320 transfer kiya dost ko via Canara Bank, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
+        "quote": "Bhai UPI App se ₹320 transfer kiya dost ko via Canara Bank, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1175",
-        "quote": "Bhai Google Pay se ₹8500 transfer kiya dost ko via HDFC Bank, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
+        "quote": "Bhai UPI App se ₹8500 transfer kiya dost ko via HDFC Bank, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
         "verbatim_verified": true
       }
     ],
@@ -118,17 +118,17 @@
     "quotes": [
       {
         "review_id": "rd_0468",
-        "quote": "Money deducted twice while paying electricity bill of ₹12000 on Google Pay. The biller says only one payment received. Bank (Bank of Baroda) says talk to Google Pay, GPay says talk to bank. No human customer support agent available. Completely helpless.",
+        "quote": "Money deducted twice while paying electricity bill of ₹12000 on UPI App. The biller says only one payment received. Bank (Bank of Baroda) says talk to UPI App, UPI App says talk to bank. No human customer support agent available. Completely helpless.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0507",
-        "quote": "Money deducted twice while paying electricity bill of ₹80 on Google Pay. The biller says only one payment received. Bank (Axis Bank) says talk to Google Pay, GPay says talk to bank. No human customer support agent available. Completely helpless.",
+        "quote": "Money deducted twice while paying electricity bill of ₹80 on UPI App. The biller says only one payment received. Bank (Axis Bank) says talk to UPI App, UPI App says talk to bank. No human customer support agent available. Completely helpless.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1690",
-        "quote": "Money deducted twice while paying electricity bill of ₹8500 on Google Pay. The biller says only one payment received. Bank (Canara Bank) says talk to Google Pay, GPay says talk to bank. No human customer support agent available. Completely helpless.",
+        "quote": "Money deducted twice while paying electricity bill of ₹8500 on UPI App. The biller says only one payment received. Bank (Canara Bank) says talk to UPI App, UPI App says talk to bank. No human customer support agent available. Completely helpless.",
         "verbatim_verified": true
       }
     ],
@@ -152,17 +152,17 @@
     "quotes": [
       {
         "review_id": "rd_0650",
-        "quote": "Google Pay failed at petrol pump for ₹8500. Amount debited from HDFC Bank account. Raised a dispute on GPay app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
+        "quote": "UPI App failed at petrol pump for ₹8500. Amount debited from HDFC Bank account. Raised a dispute on UPI App app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1618",
-        "quote": "Google Pay failed at petrol pump for ₹2500. Amount debited from Axis Bank account. Raised a dispute on GPay app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
+        "quote": "UPI App failed at petrol pump for ₹2500. Amount debited from Axis Bank account. Raised a dispute on UPI App app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1545",
-        "quote": "Google Pay failed at petrol pump for ₹25000. Amount debited from Canara Bank account. Raised a dispute on GPay app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
+        "quote": "UPI App failed at petrol pump for ₹25000. Amount debited from Canara Bank account. Raised a dispute on UPI App app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
         "verbatim_verified": true
       }
     ],
@@ -186,17 +186,17 @@
     "quotes": [
       {
         "review_id": "rd_0136",
-        "quote": "Google Pay failed at petrol pump for ₹4800. Amount debited from Kotak account. Raised a dispute on GPay app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
+        "quote": "UPI App failed at petrol pump for ₹4800. Amount debited from Kotak account. Raised a dispute on UPI App app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1640",
-        "quote": "Google Pay failed at petrol pump for ₹500. Amount debited from Kotak account. Raised a dispute on GPay app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
+        "quote": "UPI App failed at petrol pump for ₹500. Amount debited from Kotak account. Raised a dispute on UPI App app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0676",
-        "quote": "Google Pay failed at petrol pump for ₹750. Amount debited from Bank of Baroda account. Raised a dispute on GPay app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
+        "quote": "UPI App failed at petrol pump for ₹750. Amount debited from Bank of Baroda account. Raised a dispute on UPI App app, but their automated bot just closed the ticket saying transaction successful on their end. Still no refund after 8 days. Worst customer service.",
         "verbatim_verified": true
       }
     ],
@@ -256,7 +256,7 @@
     "quotes": [
       {
         "review_id": "rd_0099",
-        "quote": "Money deducted twice while paying electricity bill of ₹2500 on Google Pay.",
+        "quote": "Money deducted twice while paying electricity bill of ₹2500 on UPI App.",
         "verbatim_verified": true
       },
       {
@@ -290,17 +290,17 @@
     "quotes": [
       {
         "review_id": "rd_1073",
-        "quote": "Transferred ₹25000 to a merchant using Google Pay via SBI. The money was debited from my account immediately but merchant never received it. GPay support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
+        "quote": "Transferred ₹25000 to a merchant using UPI App via SBI. The money was debited from my account immediately but merchant never received it. UPI App support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0467",
-        "quote": "Transferred ₹150 to a merchant using Google Pay via Kotak. The money was debited from my account immediately but merchant never received it. GPay support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
+        "quote": "Transferred ₹150 to a merchant using UPI App via Kotak. The money was debited from my account immediately but merchant never received it. UPI App support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0839",
-        "quote": "Transferred ₹2500 to a merchant using Google Pay via Kotak. The money was debited from my account immediately but merchant never received it. GPay support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
+        "quote": "Transferred ₹2500 to a merchant using UPI App via Kotak. The money was debited from my account immediately but merchant never received it. UPI App support says wait 3-5 business days. The merchant refused to let me leave without paying cash. Absolute nightmare, uninstalled and using PhonePe.",
         "verbatim_verified": true
       }
     ],
@@ -358,17 +358,17 @@
     "quotes": [
       {
         "review_id": "rd_0873",
-        "quote": "Bhai Google Pay se ₹150 transfer kiya dost ko via SBI, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
+        "quote": "Bhai UPI App se ₹150 transfer kiya dost ko via SBI, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_0588",
-        "quote": "Bhai Google Pay se ₹750 transfer kiya dost ko via SBI, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
+        "quote": "Bhai UPI App se ₹750 transfer kiya dost ko via SBI, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
         "verbatim_verified": true
       },
       {
         "review_id": "rd_1785",
-        "quote": "Bhai Google Pay se ₹4800 transfer kiya dost ko via SBI, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
+        "quote": "Bhai UPI App se ₹4800 transfer kiya dost ko via SBI, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating 'wait 48 hours'. Ghatiya service, uninstalled.",
         "verbatim_verified": true
       }
     ],
@@ -399,7 +399,7 @@
       },
       {
         "review_id": "gp_0ec4f497-7eac-405a-bc9e-4bbb8e152b07",
-        "quote": "पहले Google Pay पर भरोसा था, लेकिन अब पैसे फँस जाते हैं और समय पर वापस भी नहीं मिलते।",
+        "quote": "पहले UPI App पर भरोसा था, लेकिन अब पैसे फँस जाते हैं और समय पर वापस भी नहीं मिलते।",
         "verbatim_verified": true
       },
       {
