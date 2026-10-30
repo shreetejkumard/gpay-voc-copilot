@@ -645,7 +645,7 @@
     showFileBadge("sample_customer_reviews.csv", 6000);
 
     if (processingDatasetDesc) {
-      processingDatasetDesc.textContent = "Ingesting full benchmark corpus (6,000 customer reviews)...";
+      processingDatasetDesc.textContent = "Ingesting 6,000 sample benchmark reviews (4,000 Play Store + 2,000 Reddit)...";
     }
 
     switchView('view-processing');
