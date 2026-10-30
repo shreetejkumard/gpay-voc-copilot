@@ -1,0 +1,42 @@
+[
+  {
+    "test_id": "FM_01_SARCASM",
+    "category": "sarcasm",
+    "text": "Great, another failed payment! Thanks Google Pay for making me look like an absolute fool at the restaurant counter while everyone watched. Truly world-class experience.",
+    "expected_language": "en",
+    "expected_is_churn": true,
+    "expected_sentiment_risk": "high",
+    "description": "Sarcastic review praising failed payment experience with irony"
+  },
+  {
+    "test_id": "FM_02_HINGLISH",
+    "category": "hinglish",
+    "text": "Bhai Google Pay se ₹500 transfer kiya dost ko via HDFC, paise kat gaye par uske account me nahi aaye. Customer care bot keeps repeating wait 48 hours. Ghatiya service, uninstalled.",
+    "expected_language": "hinglish",
+    "expected_is_churn": true,
+    "expected_sentiment_risk": "critical",
+    "description": "Colloquial Hinglish complaint with explicit uninstall trigger"
+  },
+  {
+    "test_id": "FM_03_SPAM_DUPLICATE_1",
+    "category": "duplicate_spam",
+    "text": "Earn ₹500 instant cashback on your first recharge! Click link http://cashback-scam.xyz to claim now!",
+    "expected_action": "dropped_or_flagged_as_duplicate",
+    "description": "Repeated promotional bot spam"
+  },
+  {
+    "test_id": "FM_03_SPAM_DUPLICATE_2",
+    "category": "duplicate_spam",
+    "text": "Earn ₹500 instant cashback on your first recharge! Click link http://cashback-scam.xyz to claim now!",
+    "expected_action": "dropped_as_exact_duplicate",
+    "description": "Identical clone of previous spam message"
+  },
+  {
+    "test_id": "FM_04_TINY_CLUSTER",
+    "category": "tiny_cluster",
+    "text": "Please bring tap to pay for Pixel Watch in India. WearOS GPay app is completely disabled here.",
+    "sample_cluster_size": 3,
+    "expected_guardrail": "low_confidence_badge",
+    "description": "Niche wearable feature request supported by only 3 reviews"
+  }
+]

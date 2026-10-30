@@ -1,0 +1,13 @@
+theme_id,theme_name,review_count,share_of_total_pct,rank_by_volume,churn_count,churn_rate_pct,rank_by_churn_share,priority_score,top_triggers,low_confidence
+theme_02,Bank Timeouts and Delayed Refunds,68,3.31,2,68,100.0,1,1.4,"no refund (68), paytm (68), switched to paytm (68)",False
+theme_04,Merchant Payment Failures & Delayed Refunds,41,2.0,3,41,100.0,2,2.4,"phonepe (41), uninstall (41), uninstalled (41)",False
+theme_08,Failed Transfers And Unhelpful Support,40,1.95,4,40,100.0,3,3.4,"ghatiya (40), paise kat gaye (40), uninstall (40)",False
+theme_06,Duplicate Deductions and Support Deadlocks,37,1.8,5,37,100.0,4,4.4,money deducted (37),False
+theme_01,Failed Transactions and Unhelpful Support,31,1.51,6,31,100.0,5,5.4,no refund (31),True
+theme_00,Failed Petrol Pump Transactions and Unresolved Refunds,25,1.22,7,25,100.0,6,6.4,no refund (25),True
+theme_10,Persistent UPI Payment and Server Errors,1146,55.79,1,83,7.24,10,6.4,"uninstall (26), worst app (15), scam (11)",False
+theme_07,Duplicate Deductions and Lack of Support,17,0.83,9,17,100.0,7,7.8,money deducted (17),True
+theme_05,Merchant Payment Debited But Failed,15,0.73,11,15,100.0,8,9.2,"phonepe (15), uninstall (15), uninstalled (15)",True
+theme_03,Low Quality Noise and Random Feedback,18,0.88,8,0,0.0,11,9.8,,True
+theme_09,Failed Transfers And Unhelpful Support,15,0.73,12,15,100.0,9,10.2,"ghatiya (15), paise kat gaye (15), uninstall (15)",True
+theme_11,Transaction Failures and Stuck Refunds,17,0.83,10,0,0.0,12,11.2,,True

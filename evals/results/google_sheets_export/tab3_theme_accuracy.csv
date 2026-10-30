@@ -1,0 +1,51 @@
+review_id,review_text,human_category,model_theme_id,model_theme_name,status
+gp_88d17b5e-5fad-45de-9621-3d6a6b7194c1,I recharged my number on 7 june but I didn't receive the service and my money was deducted,failed_payment_refund,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_d18a03ab-3457-49c8-9b4e-e4bdd60919ec,refer and earn 0000 . kafi task dalte hey jo 90% logo se pura nahi hota,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_3c6b14a0-7738-47ac-9853-fc300d42ce58,before this app is great but now this app is nothing because my issue not solved yet. my i,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_090e26fa-ce4b-40e5-8bd5-1ff9b869724c,"in this i has experienced heavy crashing while recharging and ac checking, this is terribl",general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+rd_0013,"Bhai Google Pay se ₹80 transfer kiya dost ko via Axis Bank, paise kat gaye par uske accoun",hinglish_support_dispute,theme_08,Failed Transfers And Unhelpful Support,AGREE
+gp_545a607e-2593-471d-ab31-7398ce450c65,Good app but poor transaction,noise_spam,theme_10,Persistent UPI Payment and Server Errors,DISAGREE
+gp_c6558c22-b321-4045-a26b-b0223e811cb4,"The new update has changed the way the groups we create are recommended. Earlier, the grou",general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_35715790-efaf-459d-8cda-693b79d130f9,payment failed but amount debited almost 3days completed no update,failed_payment_refund,theme_10,Persistent UPI Payment and Server Errors,DISAGREE
+gp_e9b9d91c-0a7e-41ca-8d4f-df2649dbeb7f,instead of putting pin why are you not introducing biometric,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_e540d933-3808-4a36-853a-20df65fb67db,I had a very very pathetic experience. My money is stuck since last 10 days and customer s,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_e4dc4753-9fa6-4198-82b5-de6622f550cb,"I'm using the latest version OK, now why does the light turn on when I'm scanning the QR c",general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+rd_1387,Money deducted twice while paying electricity bill of ₹500 on Google Pay. The biller says ,bill_payment_double_debit,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+rd_1227,The cashback devaluation on GPay is insane. Earlier you'd get ₹15-₹50 directly in your Can,rewards_cashback,noise_unclustered,Unclustered / Miscellaneous Noise,AGREE
+gp_f98c090f-7154-423b-ad77-3b3fa48e4306,Camouflaged. Not able to locate it ever under 15 to 20 seconds. it's so well camouflaged w,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_a259e488-791c-4a13-8c0a-f50d2a93a4e4,1 star for implementing sponsored ads in the gpay app.,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_a12777d8-63d2-433a-813b-bca6a55b78ea,this is useless payment app it's surver all makes problem,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+rd_0170,Why does Google Pay even bother having scratch cards anymore? Getting 5% off on yoga mats ,rewards_cashback,noise_unclustered,Unclustered / Miscellaneous Noise,AGREE
+rd_1056,Transferred ₹750 to a merchant using Google Pay via ICICI Bank. The money was debited from,merchant_pos_failure,theme_04,Merchant Payment Failures & Delayed Refunds,AGREE
+gp_ca717231-42b0-4859-8173-6cfb521db5bf,good pements this upi app but refral cashback not pements google pay,rewards_cashback,theme_10,Persistent UPI Payment and Server Errors,DISAGREE
+gp_c7b08b16-1a3d-47ec-a3c3-9c5773f2dcec,why the IPO application is not showing after applied.,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_834cca72-8c5d-4afa-83d6-9ce4798b828a,koi kam ke cash bak nahi aate,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_0977adf7-2c56-4583-b4f6-cee15c6d758a,Updated just now The banks are having some trouble. Please do not worry. Your money is saf,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_6fb37754-0d5e-43c8-afc1-caf8c875537e,could not reach server error i am totally frustated checked every solution from youtube de,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+rd_1513,"Bhai Google Pay se ₹500 transfer kiya dost ko via ICICI Bank, paise kat gaye par uske acco",hinglish_support_dispute,theme_08,Failed Transfers And Unhelpful Support,AGREE
+gp_7ca1f56c-1c4f-4db6-8b7e-01d0d513e466,"still can't get any answers from google, stealing money from people is so low rent, I'll f",general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_5d718c37-0e99-40e1-9976-64a018bcef21,my gpay specifically mobile recharge option is not working..it says it got a bug..and clos,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_f8f31652-dd11-4e35-8e32-438c5950fb46,at first it was nice using this app but now my money is decreasing bit by bit I don't even,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_9ad2ec5e-d7fa-43a5-aaa5-35bce1fb6ea4,switch to your bank app don't use this third party or private app they charge you for upi ,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_0ec4f497-7eac-405a-bc9e-4bbb8e152b07,"पहले Google Pay पर भरोसा था, लेकिन अब पैसे फँस जाते हैं और समय पर वापस भी नहीं मिलते।मेरे ",general_upi_speed_ui,theme_11,Transaction Failures and Stuck Refunds,DISAGREE
+gp_981741ca-4c52-408d-bf31-000771317403,very thirdclass service customer care not supporting,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_310c88f4-069e-4c50-8904-7a2e9e8a15e7,"Incorrect UPI PIN. After 3 unsuccessful attempts, your account will be blocked for 24 hour",general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_1c11080d-25ae-4e0e-aacc-692784499c31,this app is fraud they give us the reward coupon but when you redeem it they give you any ,rewards_cashback,theme_10,Persistent UPI Payment and Server Errors,DISAGREE
+gp_acb53336-4eda-42dd-b6da-53407dd303d6,hey Siri lock the phone,noise_spam,theme_10,Persistent UPI Payment and Server Errors,DISAGREE
+rd_0873,"Bhai Google Pay se ₹150 transfer kiya dost ko via SBI, paise kat gaye par uske account me ",hinglish_support_dispute,theme_09,Failed Transfers And Unhelpful Support,AGREE
+gp_b1c9161c-1afd-4b75-97ca-22bbd7e61d6f,"Hello Gpay Team, you guys have given very good update. The Ul is smooth with a lot of expe",noise_spam,noise_unclustered,Unclustered / Miscellaneous Noise,AGREE
+gp_78509aec-81ee-425c-9e2e-0fe62359346d,"Quick and easy. However, they only give me scratch cards I'd never need and therefore woul",rewards_cashback,noise_unclustered,Unclustered / Miscellaneous Noise,AGREE
+gp_96dcbf88-89af-4065-b023-95fbdaaacaee,"what I wanted was only to pay once, it is a trapping app to bring in many softwarapps6 wit",general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_7cd53774-032f-425b-be4f-e3a083a7af83,"fake offer or reward, I'm facing struggle for using at reward claiming,my money cannot ref",failed_payment_refund,theme_10,Persistent UPI Payment and Server Errors,DISAGREE
+gp_40a3c40f-3862-41e9-abdd-0fdf69ac34f5,Searching for recharge plans in mobile recharge on google pay not working,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+rd_1759,GPay transaction failed due to bank server timeout with Bank of Baroda. My ₹150 has been s,bank_server_downtime,theme_02,Bank Timeouts and Delayed Refunds,AGREE
+gp_a7b03048-cecf-4df2-9a1b-07422caa54af,मेरे गूगल पे में से पैसे करते हैं काटने वाला बंद करो,general_upi_speed_ui,theme_11,Transaction Failures and Stuck Refunds,DISAGREE
+rd_1241,GPay transaction failed due to bank server timeout with ICICI Bank. My ₹8500 has been stuc,bank_server_downtime,theme_02,Bank Timeouts and Delayed Refunds,AGREE
+gp_fd614f28-34b5-476a-86a5-c9e5452a1190,bahut achcha app hai aap bhi TRAI karo,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_2e00dc1e-ae1c-412d-bd8a-e4c5e373e85d,I had to uninstall the app. it's wanting me to select a country and United States is not a,general_upi_speed_ui,theme_10,Persistent UPI Payment and Server Errors,AGREE
+gp_db95775d-f51d-42bb-ace2-f0af767c0d7b,please stop promoting fake and scam loan apps,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+rd_0314,Money deducted twice while paying electricity bill of ₹500 on Google Pay. The biller says ,bill_payment_double_debit,theme_07,Duplicate Deductions and Lack of Support,AGREE
+rd_1339,Mera GPay account block kar diya bina kisi reason ke after 2 wrong PIN attempts on ICICI B,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+rd_1285,"Say what you want about rewards, but Google Pay's user interface is by far the cleanest an",general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE
+gp_d9811070-7ce2-454b-ba52-b5077f054f3c,difficult to open in new phone,noise_spam,noise_unclustered,Unclustered / Miscellaneous Noise,AGREE
+gp_4807295d-ddfc-4db6-88e6-6cc4e3fa3636,WHY DON'T YOU PROVIDE PDF STATEMENTS CALENDAR AND FINANCIAL YEAR WISE?,general_upi_speed_ui,noise_unclustered,Unclustered / Miscellaneous Noise,DISAGREE

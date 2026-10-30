@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-10-30T11:56:23.124476",
+  "rows_before": 6000,
+  "duplicates_removed": 2755,
+  "near_duplicates_removed": 65,
+  "short_rows_removed": 1126,
+  "rows_after": 2054,
+  "retained_percentage": 34.23,
+  "language_distribution": {
+    "en": 1849,
+    "hinglish": 173,
+    "hi": 32
+  },
+  "source_distribution": {
+    "playstore": 1600,
+    "reddit": 454
+  },
+  "rating_distribution": {
+    "1": 824,
+    "2": 595,
+    "3": 342,
+    "4": 185,
+    "5": 108
+  }
+}

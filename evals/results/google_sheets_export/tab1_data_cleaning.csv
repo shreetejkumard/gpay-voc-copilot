@@ -1,0 +1,10 @@
+Metric,Value,Notes
+Starting Merged Reviews,6000,Raw merged data from Play Store and Reddit
+Exact Duplicates Removed,2755,Identical review text dropped
+Near-Duplicates Removed,65,Punctuation/whitespace/casing variations dropped
+Short Reviews Dropped (< 5 words),1126,"Low-signal praise/complaints ('good', 'nice app')"
+Clean High-Signal Reviews Retained,2054,Information-dense corpus passed to clustering
+Corpus Retention Rate,34.23%,Quality-to-noise ratio
+Language: English (en),1849,Standard English reviews
+Language: Hinglish,173,Romanized Hindi colloquial reviews
+Language: Hindi (hi),32,Devanagari script reviews
