@@ -20,7 +20,6 @@
 
   // DOM Elements (cached after DOMContentLoaded)
   let viewUpload, viewProcessing, viewDashboard;
-  let btnHeaderReset;
   let tabModeFile, tabModePaste;
   let modeFileZone, modePasteZone;
   let dropzone, fileInput, selectedFileBadge, selectedFileName, selectedFileCount;
@@ -75,7 +74,6 @@
     viewUpload = document.getElementById('view-upload');
     viewProcessing = document.getElementById('view-processing');
     viewDashboard = document.getElementById('view-dashboard');
-    btnHeaderReset = document.getElementById('btn-header-reset');
 
     tabModeFile = document.getElementById('tab-mode-file');
     tabModePaste = document.getElementById('tab-mode-paste');
@@ -164,11 +162,6 @@
     if (target) {
       target.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Header reset button visibility
-    if (btnHeaderReset) {
-      btnHeaderReset.style.display = (viewId === 'view-dashboard') ? 'inline-flex' : 'none';
     }
   }
 
@@ -265,6 +258,7 @@
   window.openRubricModal = function () {
     const modal = document.getElementById('rubric-modal-overlay');
     if (modal) {
+      modal.style.setProperty('display', 'flex', 'important');
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -277,6 +271,7 @@
     const modal = document.getElementById('rubric-modal-overlay');
     if (modal) {
       modal.classList.remove('active');
+      modal.style.setProperty('display', 'none', 'important');
       document.body.style.overflow = '';
     }
   };

@@ -1851,15 +1851,23 @@ body {
   box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
+/* Dashboard Header Actions Container */
+.dash-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* Modal Overlay */
 .modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(3, 7, 18, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  display: none !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  background: rgba(3, 7, 18, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
   align-items: center;
   justify-content: center;
   padding: 24px;
@@ -1867,7 +1875,7 @@ body {
 }
 
 .modal-overlay.active {
-  display: flex;
+  display: flex !important;
   animation: fadeIn 0.25s ease forwards;
 }
 
