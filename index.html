@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3.2">
+  <link rel="stylesheet" href="styles.css?v=3.3">
 </head>
 <body>
 
@@ -34,11 +34,26 @@
           Turn messy customer feedback from any channel into evidence-backed product decisions.
         </p>
         <div class="feedback-channels-strip">
-          <span class="channel-pill">Play Store Reviews</span>
-          <span class="channel-pill">Support Tickets</span>
-          <span class="channel-pill">Sales Calls</span>
-          <span class="channel-pill">Customer Interviews</span>
-          <span class="channel-pill">WhatsApp Screenshots</span>
+          <span class="channel-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Play Store Reviews
+          </span>
+          <span class="channel-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Support Tickets
+          </span>
+          <span class="channel-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Sales Calls
+          </span>
+          <span class="channel-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Customer Interviews
+          </span>
+          <span class="channel-pill">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            WhatsApp Screenshots
+          </span>
         </div>
         <p class="pm-mantra">"The PM's job is to turn messy feedback into product decisions."</p>
       </div>
@@ -77,10 +92,22 @@
           <div class="preset-selector-bar">
             <span class="preset-title">Test Real Indian Products:</span>
             <div class="preset-chips-group">
-              <button class="preset-chip active" id="chip-food" onclick="loadProductPreset('food', this)">🍕 Swiggy / Zomato</button>
-              <button class="preset-chip" id="chip-ecommerce" onclick="loadProductPreset('ecommerce', this)">👗 Meesho / E-Com</button>
-              <button class="preset-chip" id="chip-services" onclick="loadProductPreset('services', this)">🛠️ Urban Company</button>
-              <button class="preset-chip" id="chip-fintech" onclick="loadProductPreset('fintech', this)">💳 UPI / Payments</button>
+              <button class="preset-chip active" id="chip-food" onclick="loadProductPreset('food', this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                <span>Swiggy / Zomato</span>
+              </button>
+              <button class="preset-chip" id="chip-ecommerce" onclick="loadProductPreset('ecommerce', this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <span>Meesho / E-Com</span>
+              </button>
+              <button class="preset-chip" id="chip-services" onclick="loadProductPreset('services', this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <span>Urban Company</span>
+              </button>
+              <button class="preset-chip" id="chip-fintech" onclick="loadProductPreset('fintech', this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                <span>UPI / Payments</span>
+              </button>
             </div>
           </div>
           <textarea id="raw-textarea" placeholder="Paste your raw customer reviews or tickets here, or click any product preset chip above to test real customer complaints..."></textarea>
@@ -387,8 +414,16 @@
       <!-- TAB 2: ROADMAP RECOMMENDATIONS -->
       <div id="tab-roadmap" class="dash-tab-pane">
         <div class="section-intro">
-          <h2>Strategic Product Roadmap Proposals</h2>
-          <p>Prioritized product initiatives synthesized from clustered friction data, explicitly citing customer review counts, active churn percentage, North Star metrics, and engineering risks.</p>
+          <div class="section-intro-text">
+            <h2>Strategic Product Roadmap Proposals</h2>
+            <p>Prioritized product initiatives synthesized from clustered friction data, explicitly citing customer review counts, active churn percentage, North Star metrics, and engineering risks.</p>
+          </div>
+          <div class="section-intro-actions">
+            <button class="btn btn-secondary-clean btn-prd-export" onclick="openPrdModal()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+              <span>Export Strategic PRD / Linear Spec</span>
+            </button>
+          </div>
         </div>
         <div class="roadmap-grid" id="roadmap-container">
           <!-- Rendered dynamically -->
@@ -414,25 +449,38 @@
         <button class="modal-close-btn" onclick="closeRubricModal()">&times;</button>
       </div>
 
-      <div class="rubric-columns-grid">
+      <!-- Interactive 3-Case Rubric Switcher -->
+      <div class="rubric-case-selector">
+        <button class="rubric-case-tab active" id="rubric-tab-onboarding" onclick="switchRubricCase('onboarding', this)">
+          Case 1: User Onboarding Confusion
+        </button>
+        <button class="rubric-case-tab" id="rubric-tab-payments" onclick="switchRubricCase('payments', this)">
+          Case 2: Checkout & Bank Server Timeouts
+        </button>
+        <button class="rubric-case-tab" id="rubric-tab-delivery" onclick="switchRubricCase('delivery', this)">
+          Case 3: Unfulfilled Orders & Cancellations
+        </button>
+      </div>
+
+      <div class="rubric-columns-grid" id="rubric-cards-grid">
         <!-- Bad Output Card -->
         <div class="rubric-card rubric-bad">
           <div class="rubric-card-badge badge-bad-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span>The Naive "Bad" Output (Generic LLM)</span>
+            <span id="rubric-bad-title">The Naive "Bad" Output (Generic LLM)</span>
           </div>
           
           <div class="rubric-quote-box quote-bad">
-            <p><em>"A bad output says: 'Users are unhappy with onboarding. Payments have server issues and customer support is slow.'"</em></p>
+            <p id="rubric-bad-text"><em>"Users are unhappy with onboarding. The app is confusing and people are dropping off during initial account setup."</em></p>
           </div>
 
           <div class="rubric-critique">
             <h4 class="critique-title">Why this fails in an executive PM review:</h4>
-            <ul class="critique-list">
+            <ul class="critique-list" id="rubric-bad-list">
               <li><strong>Zero Quantification:</strong> How many users? 5? 5,000? A PM cannot allocate engineering sprints without numbers.</li>
-              <li><strong>No Root Cause:</strong> Is it merchant checkout? Bank switch timeout? Duplicate debits?</li>
-              <li><strong>Fails the "Based on What?" Test:</strong> Zero traceability. If an engineer asks "Where did this come from?", the PM has no review IDs to show.</li>
-              <li><strong>Vague KPI:</strong> "Improve customer experience" cannot be measured or tracked against quarterly OKRs.</li>
+              <li><strong>No Operational Root Cause:</strong> Where did they drop off? Step 1? Step 2? Was it an OTP issue or permission error?</li>
+              <li><strong>Fails the "Based on What?" Test:</strong> Zero source traceability. If an engineer asks "Where did this come from?", the PM has no customer quotes or review IDs to show.</li>
+              <li><strong>Unmeasurable KPI:</strong> "Improve onboarding experience" cannot be measured or tracked against quarterly OKRs.</li>
             </ul>
           </div>
         </div>
@@ -441,24 +489,24 @@
         <div class="rubric-card rubric-good">
           <div class="rubric-card-badge badge-good-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>The Grounded "Good" Output (Our VoC Copilot)</span>
+            <span id="rubric-good-title">The Grounded "Good" Output (Our VoC Copilot)</span>
           </div>
 
-          <div class="rubric-quote-box quote-good">
-            <p><strong>"12 out of 50 reviews mention onboarding confusion."</strong></p>
-            <p><em>"5 users specifically said they could not complete the first setup step because the OTP screen stayed blank."</em></p>
-            <div class="rubric-citations-sample">
+          <div class="rubric-quote-box quote-good" id="rubric-good-box">
+            <p><strong id="rubric-good-stat">"12 out of 50 reviews mention onboarding confusion."</strong></p>
+            <p><em id="rubric-good-quote">"5 users specifically said they could not complete the first setup step because the OTP screen stayed blank after entering phone number."</em></p>
+            <div class="rubric-citations-sample" id="rubric-good-citations">
               <span>Verified Sources: <code>REV-03</code>, <code>REV-08</code>, <code>REV-12</code> (100% Verbatim Match)</span>
             </div>
           </div>
 
           <div class="rubric-critique">
             <h4 class="critique-title">Why this wins in an executive PM review:</h4>
-            <ul class="critique-list">
-              <li><strong>Concrete Evidence:</strong> Supported by exact review volume and quantified active churn severity (P0 vs P1).</li>
-              <li><strong>Specific Operational Root Cause:</strong> Identifies the exact failure point (Step 1 OTP screen freeze).</li>
-              <li><strong>100% Verifiable Source Grounding:</strong> Answers "Based on what?" by linking directly to raw review IDs with zero AI hallucination.</li>
-              <li><strong>Actionable Strategic Metric:</strong> Synthesizes a Linear-style initiative with a measurable North Star KPI (e.g., -45% drop-off in &lt;60s).</li>
+            <ul class="critique-list" id="rubric-good-list">
+              <li><strong>Concrete Quantified Evidence:</strong> Supported by exact review volume (12/50 reviews, 24% friction rate) and classified attrition severity.</li>
+              <li><strong>Specific Operational Root Cause:</strong> Pinpoints the exact technical choke point (Step 1 phone number entry & OTP screen freeze on Jio network).</li>
+              <li><strong>100% Verifiable Source Grounding:</strong> Answers "Based on what?" by anchoring character-for-character to raw customer quotes with verified IDs.</li>
+              <li><strong>Actionable Strategic Metric:</strong> Synthesizes a Linear-style initiative with a measurable North Star KPI (Reduce Step-1 onboarding abandonment by 45%).</li>
             </ul>
           </div>
         </div>
@@ -474,8 +522,45 @@
     </div>
   </div>
 
+  <!-- ================= STRATEGIC PRD / LINEAR SPEC EXPORT MODAL ================= -->
+  <div id="prd-modal-overlay" class="modal-overlay" style="display: none !important; position: fixed !important; inset: 0 !important; z-index: 99999 !important;" onclick="closePrdModal(event)">
+    <div class="prd-modal-card" onclick="event.stopPropagation()">
+      <div class="prd-modal-header">
+        <div class="prd-header-left">
+          <div class="prd-badge-pill">
+            <span class="status-pulse-dot"></span>
+            <span>STRATEGIC PM ARTIFACT</span>
+          </div>
+          <h2 class="prd-title">Product Requirements Document (PRD) & Linear Spec</h2>
+          <p class="prd-subtitle">Evidence-backed roadmap initiatives, 90-day North Star metrics, and grounded customer citations.</p>
+        </div>
+        <div class="prd-header-actions">
+          <button class="btn btn-secondary-clean" onclick="copyPrdToClipboard()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy Markdown</span>
+          </button>
+          <button class="btn btn-secondary-clean" onclick="downloadPrdMarkdown()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download .md</span>
+          </button>
+          <button class="modal-close-btn" onclick="closePrdModal()">&times;</button>
+        </div>
+      </div>
+      <div class="prd-modal-body">
+        <pre class="prd-code-preview"><code id="prd-markdown-content">Generating PRD...</code></pre>
+      </div>
+      <div class="prd-modal-footer">
+        <div class="rubric-footer-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Production-ready spec formatted for Linear, Jira Epics, or Notion 1-Page PRD.</span>
+        </div>
+        <button class="btn btn-primary-clean" onclick="closePrdModal()">Back to Dashboard</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="data_bundle.js?v=3.2"></script>
-  <script src="app.js?v=3.2"></script>
+  <script src="data_bundle.js?v=3.3"></script>
+  <script src="app.js?v=3.3"></script>
 </body>
 </html>

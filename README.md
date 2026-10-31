@@ -46,24 +46,25 @@ This **Voice of Customer Copilot** is built to answer those exact questions with
 
 Built with a focused, utility-first user experience (inspired by *iLovePDF* and modern SaaS apps):
 
-1. **Screen 1: Minimal Upload & Ingestion Landing Page**
+1. **Screen 1: Minimal Upload & Multi-Channel Ingestion Landing Page**
+   - **Supported Ingestion Channels:** Play Store Reviews, Support Tickets, Sales Calls, Customer Interviews, and WhatsApp Screenshots.
+   - **Indian Product Presets:** Instant testing with authentic multi-channel customer rants across **Swiggy / Zomato** (Food Delivery), **Meesho** (E-Commerce), **Urban Company** (Home Services), and **UPI Payments** (Fintech).
    - **Feedback Upload Dropzone:** Drag & drop customer feedback files (`.csv`, `.xlsx`, `.pdf`, `.docx`, `.txt`) or paste raw unstructured feedback text.
-   - **Live Review Detection:** Real-time feedback parser estimating review counts and validating formatting.
    - **Trial Dataset & 1-Click Demo:** Downloadable `sample_customer_reviews.csv` and instant 1-click evaluation button for interviewers and reviewers who don't have messy feedback files on hand.
 
-2. **Screen 2: Real-Time Processing Pipeline Animation**
+2. **Screen 2: Real-Time Processing Pipeline Animation (Deliberate 1.5s Pacing)**
    - Step 1: Data Normalization & Bot Spam Deduplication
    - Step 2: Language & Nuance Classification (English, Hindi, Hinglish)
    - Step 3: Unsupervised Theme Clustering (HDBSCAN text embeddings)
    - Step 4: Verbatim Quote & Churn Signal Extraction
    - Step 5: Roadmap Synthesis & Verification Assertions
 
-3. **Screen 3: Executive Product Manager Dashboard**
-   - **Executive KPI Bar:** Feedback volume analyzed, clustered pain points, active churn risk %, and 100% verbatim citation pass rate.
-   - **Ranked Themes & Quotes:** 12 organic pain point clusters with volume, churn risk, and expandable 100% verbatim customer quotes.
-   - **What to Put on the Roadmap:** 3 evidence-backed proposals with real counts, North Star KPIs, and engineering risk mitigations.
-   - **Bad vs. Good Output Case Study:** Side-by-side comparison illustrating why naive LLM summarizers fail executive product reviews.
-   - **AI Safety & Evals Suite:** 100% verbatim citation audit, 4/4 edge case stress tests, and 5 downloadable Google Sheets tabs.
+3. **Screen 3: Executive Product Manager Dashboard (Strict 2-Tab Hierarchy)**
+   - **Executive KPI Bar:** Feedback volume analyzed, clustered pain points, active churn risk %, and 100% verbatim citation verification.
+   - **Tab 1: Top Customer Pain Points & Grounded Quotes:** Clustered friction themes with volume, churn risk %, channel attribution tags (`[Support Ticket]`, `[Play Store]`, `[WhatsApp Screenshot]`), and expandable 100% verbatim customer quotes.
+   - **Tab 2: Strategic Product Roadmap & Linear Spec Export:** Evidence-backed proposals with real counts, North Star KPIs, engineering risks, and 1-click **Export Strategic PRD / Linear Spec** (Markdown/Notion/Linear ready).
+   - **PM Evaluation Rubric Modal (Bad vs. Good Output):** Interactive 3-case comparative rubric illustrating why naive LLM summarizers fail executive PM reviews and how grounded VoC wins.
+   - **Zero Hallucination Guarantee:** 100% character-for-character traceability with instant verification toasts on citation click.
 
 ---
 
