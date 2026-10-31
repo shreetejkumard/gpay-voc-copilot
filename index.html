@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3.3">
+  <link rel="stylesheet" href="styles.css?v=3.4">
 </head>
 <body>
 
@@ -311,10 +311,6 @@
           <div class="dash-sub" id="dash-meta-text">Analyzed from 6,000 customer reviews • 100% Verbatim Grounded Citations</div>
         </div>
         <div class="dash-header-actions">
-          <button class="btn btn-secondary-clean btn-rubric-trigger" id="btn-open-rubric" onclick="openRubricModal()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            <span>PM Evals: Bad vs Good Output</span>
-          </button>
           <button class="btn btn-secondary-clean" onclick="resetToUpload()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             <span>Upload New Dataset</span>
@@ -434,93 +430,7 @@
 
   </main>
 
-  <!-- ================= PM EVALUATION RUBRIC MODAL ================= -->
-  <div id="rubric-modal-overlay" class="modal-overlay" style="display: none !important; position: fixed !important; inset: 0 !important; z-index: 99999 !important;" onclick="closeRubricModal(event)">
-    <div class="rubric-modal-card" onclick="event.stopPropagation()">
-      <div class="rubric-modal-header">
-        <div class="rubric-header-left">
-          <div class="rubric-badge-pill">
-            <span class="status-pulse-dot"></span>
-            <span>PM PORTFOLIO EVALUATION STANDARD</span>
-          </div>
-          <h2 class="rubric-title">Why This Is Portfolio-Worthy: Bad vs. Good Output</h2>
-          <p class="rubric-subtitle">The evaluation rubric that separates an elite Product Manager from a naive AI summarizer.</p>
-        </div>
-        <button class="modal-close-btn" onclick="closeRubricModal()">&times;</button>
-      </div>
 
-      <!-- Interactive 3-Case Rubric Switcher -->
-      <div class="rubric-case-selector">
-        <button class="rubric-case-tab active" id="rubric-tab-onboarding" onclick="switchRubricCase('onboarding', this)">
-          Case 1: User Onboarding Confusion
-        </button>
-        <button class="rubric-case-tab" id="rubric-tab-payments" onclick="switchRubricCase('payments', this)">
-          Case 2: Checkout & Bank Server Timeouts
-        </button>
-        <button class="rubric-case-tab" id="rubric-tab-delivery" onclick="switchRubricCase('delivery', this)">
-          Case 3: Unfulfilled Orders & Cancellations
-        </button>
-      </div>
-
-      <div class="rubric-columns-grid" id="rubric-cards-grid">
-        <!-- Bad Output Card -->
-        <div class="rubric-card rubric-bad">
-          <div class="rubric-card-badge badge-bad-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span id="rubric-bad-title">The Naive "Bad" Output (Generic LLM)</span>
-          </div>
-          
-          <div class="rubric-quote-box quote-bad">
-            <p id="rubric-bad-text"><em>"Users are unhappy with onboarding. The app is confusing and people are dropping off during initial account setup."</em></p>
-          </div>
-
-          <div class="rubric-critique">
-            <h4 class="critique-title">Why this fails in an executive PM review:</h4>
-            <ul class="critique-list" id="rubric-bad-list">
-              <li><strong>Zero Quantification:</strong> How many users? 5? 5,000? A PM cannot allocate engineering sprints without numbers.</li>
-              <li><strong>No Operational Root Cause:</strong> Where did they drop off? Step 1? Step 2? Was it an OTP issue or permission error?</li>
-              <li><strong>Fails the "Based on What?" Test:</strong> Zero source traceability. If an engineer asks "Where did this come from?", the PM has no customer quotes or review IDs to show.</li>
-              <li><strong>Unmeasurable KPI:</strong> "Improve onboarding experience" cannot be measured or tracked against quarterly OKRs.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Good Output Card -->
-        <div class="rubric-card rubric-good">
-          <div class="rubric-card-badge badge-good-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span id="rubric-good-title">The Grounded "Good" Output (Our VoC Copilot)</span>
-          </div>
-
-          <div class="rubric-quote-box quote-good" id="rubric-good-box">
-            <p><strong id="rubric-good-stat">"12 out of 50 reviews mention onboarding confusion."</strong></p>
-            <p><em id="rubric-good-quote">"5 users specifically said they could not complete the first setup step because the OTP screen stayed blank after entering phone number."</em></p>
-            <div class="rubric-citations-sample" id="rubric-good-citations">
-              <span>Verified Sources: <code>REV-03</code>, <code>REV-08</code>, <code>REV-12</code> (100% Verbatim Match)</span>
-            </div>
-          </div>
-
-          <div class="rubric-critique">
-            <h4 class="critique-title">Why this wins in an executive PM review:</h4>
-            <ul class="critique-list" id="rubric-good-list">
-              <li><strong>Concrete Quantified Evidence:</strong> Supported by exact review volume (12/50 reviews, 24% friction rate) and classified attrition severity.</li>
-              <li><strong>Specific Operational Root Cause:</strong> Pinpoints the exact technical choke point (Step 1 phone number entry & OTP screen freeze on Jio network).</li>
-              <li><strong>100% Verifiable Source Grounding:</strong> Answers "Based on what?" by anchoring character-for-character to raw customer quotes with verified IDs.</li>
-              <li><strong>Actionable Strategic Metric:</strong> Synthesizes a Linear-style initiative with a measurable North Star KPI (Reduce Step-1 onboarding abandonment by 45%).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rubric-modal-footer">
-        <div class="rubric-footer-note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <span>Every insight on this dashboard adheres to the <strong>100% Verbatim Grounding Standard</strong>: zero paraphrasing, zero hallucinated IDs, and quantifiable business impact.</span>
-        </div>
-        <button class="btn btn-primary-clean" onclick="closeRubricModal()">Got It, Back to Dashboard</button>
-      </div>
-    </div>
-  </div>
 
   <!-- ================= STRATEGIC PRD / LINEAR SPEC EXPORT MODAL ================= -->
   <div id="prd-modal-overlay" class="modal-overlay" style="display: none !important; position: fixed !important; inset: 0 !important; z-index: 99999 !important;" onclick="closePrdModal(event)">
@@ -560,7 +470,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="data_bundle.js?v=3.3"></script>
-  <script src="app.js?v=3.3"></script>
+  <script src="data_bundle.js?v=3.4"></script>
+  <script src="app.js?v=3.4"></script>
 </body>
 </html>

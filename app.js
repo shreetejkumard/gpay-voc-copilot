@@ -254,130 +254,6 @@
     }
   };
 
-  // --- PM Evaluation Rubric Cases & Handlers ---
-  const RUBRIC_CASES = {
-    onboarding: {
-      bad: {
-        title: 'The Naive "Bad" Output (Generic LLM)',
-        text: 'Users are unhappy with onboarding. The app is confusing and people are dropping off during initial account setup.',
-        critique: [
-          '<strong>Zero Quantification:</strong> How many users? 5? 5,000? A PM cannot allocate engineering sprints without numbers.',
-          '<strong>No Operational Root Cause:</strong> Where did they drop off? Step 1? Step 2? Was it an OTP issue or permission error?',
-          '<strong>Fails the "Based on What?" Test:</strong> Zero source traceability. If an engineer asks "Where did this come from?", the PM has no customer quotes or review IDs to show.',
-          '<strong>Unmeasurable KPI:</strong> "Improve onboarding experience" cannot be measured or tracked against quarterly OKRs.'
-        ]
-      },
-      good: {
-        title: 'The Grounded "Good" Output (Our VoC Copilot)',
-        stat: '12 out of 50 reviews mention onboarding confusion.',
-        quote: '5 users specifically said they could not complete the first setup step because the OTP screen stayed blank after entering phone number.',
-        citations: 'Verified Sources: <code>REV-03</code>, <code>REV-08</code>, <code>REV-12</code> (100% Verbatim Match)',
-        critique: [
-          '<strong>Concrete Quantified Evidence:</strong> Supported by exact review volume (12/50 reviews, 24% friction rate) and classified attrition severity.',
-          '<strong>Specific Operational Root Cause:</strong> Pinpoints the exact technical choke point (Step 1 phone number entry & OTP screen freeze on Jio network).',
-          '<strong>100% Verifiable Source Grounding:</strong> Answers "Based on what?" by anchoring character-for-character to raw customer quotes with verified IDs.',
-          '<strong>Actionable Strategic Metric:</strong> Synthesizes a Linear-style initiative with a measurable North Star KPI (Reduce Step-1 onboarding abandonment by 45%).'
-        ]
-      }
-    },
-    payments: {
-      bad: {
-        title: 'The Naive "Bad" Output (Generic LLM)',
-        text: 'Users are unhappy with payments. Many transactions fail due to bank servers and customer care is slow.',
-        critique: [
-          '<strong>Zero Quantification:</strong> Subjective statement with no data on transaction volume, failure percentage, or churn rate.',
-          '<strong>No Systemic Root Cause:</strong> Blames "bank servers" generally without isolating peak-hour switch latencies or specific partner banks (SBI, HDFC).',
-          '<strong>No Evidence Grounding:</strong> Engineering directors will reject sprint prioritization without exact review IDs and customer quotes.',
-          '<strong>Unclear Success Criteria:</strong> "Make payments faster" provides zero engineering acceptance criteria.'
-        ]
-      },
-      good: {
-        title: 'The Grounded "Good" Output (Our VoC Copilot)',
-        stat: '68 reviews (3.31% of dataset) cite peak-hour bank server timeouts.',
-        quote: 'UPI App transaction failed due to bank server timeout with SBI. My ₹1200 has been stuck for over a week with no refund in sight. Switched to Paytm soundbox QR, at least you get immediate confirmation.',
-        citations: 'Verified Sources: <code>rd_1108</code>, <code>rd_0975</code>, <code>rd_0758</code> (100% Verbatim Match)',
-        critique: [
-          '<strong>100% Attrition Signal:</strong> Proves 68/68 affected users permanently uninstalled or migrated to competitor Soundbox QRs.',
-          '<strong>Specific Root Cause Isolated:</strong> Highlights partner bank switch timeouts where money is debited but refund exceeds 7 business days.',
-          '<strong>100% Verbatim Citations:</strong> Character-for-character traceable to raw feedback corpus with verified review IDs.',
-          '<strong>Actionable North Star Metric:</strong> Reduce bank-timeout failure rates by 30% and automate 80% of stuck refunds within T+1 day over 90 days.'
-        ]
-      }
-    },
-    delivery: {
-      bad: {
-        title: 'The Naive "Bad" Output (Generic LLM)',
-        text: 'Delivery is late and food gets spoiled. Customers get angry at support bots.',
-        critique: [
-          '<strong>Zero Financial Context:</strong> No mention of order value, refund dispute costs, or rider SLA breach duration.',
-          '<strong>Generic Complaint:</strong> Doesn\'t identify whether the bottleneck is restaurant prep time, rider dispatch, or automated chatbot policies.',
-          '<strong>No Verifiable Quotes:</strong> Lacks authentic customer voices describing the actual consumer experience.',
-          '<strong>Vague Direction:</strong> "Hire more riders" ignores algorithmic dispatch and proactive cancellation protection.'
-        ]
-      },
-      good: {
-        title: 'The Grounded "Good" Output (Our VoC Copilot)',
-        stat: '45 out of 110 reviews report riders taking 75+ mins vs 25 min promise.',
-        quote: 'Delivery partner took 75 mins instead of promised 25 mins. Food was cold and biryani was completely spilled inside bag. Automated chatbot only offered ₹25 coupon for a ₹650 order. Uninstalled Swiggy and switched to Zomato.',
-        citations: 'Verified Sources: <code>REV-01</code>, <code>REV-04</code>, <code>REV-07</code> (100% Verbatim Match)',
-        critique: [
-          '<strong>Direct Churn Attribution:</strong> Documents the exact customer journey that triggers uninstalls (late delivery + cold food + ₹25 chatbot coupon insulting a ₹650 order).',
-          '<strong>Algorithmic Root Cause:</strong> Identifies rider geofence standing time (35 mins) and lack of automatic re-dispatch.',
-          '<strong>100% Verbatim Anchoring:</strong> Zero LLM hallucination or paraphrasing; true voice of the customer.',
-          '<strong>Actionable Linear Epic:</strong> Reduce partner-initiated cancellations by 45% and automate instant reassignment or credit in <60 seconds.'
-        ]
-      }
-    }
-  };
-
-  window.switchRubricCase = function (caseKey, buttonEl) {
-    const data = RUBRIC_CASES[caseKey];
-    if (!data) return;
-
-    document.querySelectorAll('.rubric-case-tab').forEach(b => b.classList.remove('active'));
-    if (buttonEl) buttonEl.classList.add('active');
-
-    const badTitle = document.getElementById('rubric-bad-title');
-    const badText = document.getElementById('rubric-bad-text');
-    const badList = document.getElementById('rubric-bad-list');
-    if (badTitle) badTitle.textContent = data.bad.title;
-    if (badText) badText.innerHTML = `<em>"${escapeHtml(data.bad.text)}"</em>`;
-    if (badList) badList.innerHTML = data.bad.critique.map(item => `<li>${item}</li>`).join('');
-
-    const goodTitle = document.getElementById('rubric-good-title');
-    const goodStat = document.getElementById('rubric-good-stat');
-    const goodQuote = document.getElementById('rubric-good-quote');
-    const goodCitations = document.getElementById('rubric-good-citations');
-    const goodList = document.getElementById('rubric-good-list');
-
-    if (goodTitle) goodTitle.textContent = data.good.title;
-    if (goodStat) goodStat.textContent = `"${data.good.stat}"`;
-    if (goodQuote) goodQuote.textContent = `"${data.good.quote}"`;
-    if (goodCitations) goodCitations.innerHTML = `<span>${data.good.citations}</span>`;
-    if (goodList) goodList.innerHTML = data.good.critique.map(item => `<li>${item}</li>`).join('');
-  };
-
-  window.openRubricModal = function () {
-    const modal = document.getElementById('rubric-modal-overlay');
-    if (modal) {
-      modal.style.setProperty('display', 'flex', 'important');
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  window.closeRubricModal = function (event) {
-    if (event && event.target && event.target.closest && event.target.closest('.rubric-modal-card')) {
-      return;
-    }
-    const modal = document.getElementById('rubric-modal-overlay');
-    if (modal) {
-      modal.classList.remove('active');
-      modal.style.setProperty('display', 'none', 'important');
-      document.body.style.overflow = '';
-    }
-  };
-
   // --- Strategic PRD / Linear Spec Generator & Handlers ---
   window.generatePrdMarkdown = function () {
     const activeData = currentVocData || (typeof VOC_DATA !== 'undefined' ? VOC_DATA : null) || { themes: [], recommendations: [] };
@@ -479,7 +355,6 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      window.closeRubricModal();
       window.closePrdModal();
     }
   });
