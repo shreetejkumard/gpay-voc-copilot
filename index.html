@@ -37,8 +37,16 @@
       <div class="upload-hero">
         <h1 class="hero-title">Voice of Customer Copilot</h1>
         <p class="hero-subtitle">
-          Drop in raw feedback from any channel—customer reviews, support tickets, sales calls, or user interviews—and let AI cluster customer pain points, flag churn, and synthesize your next roadmap.
+          Turn messy customer feedback from any channel into evidence-backed product decisions.
         </p>
+        <div class="feedback-channels-strip">
+          <span class="channel-pill">Play Store Reviews</span>
+          <span class="channel-pill">Support Tickets</span>
+          <span class="channel-pill">Sales Calls</span>
+          <span class="channel-pill">Customer Interviews</span>
+          <span class="channel-pill">WhatsApp Screenshots</span>
+        </div>
+        <p class="pm-mantra">"The PM's job is to turn messy feedback into product decisions."</p>
       </div>
 
       <!-- Main Ingestion Card -->
@@ -72,10 +80,19 @@
 
         <!-- Mode B: Paste Textarea -->
         <div id="mode-paste-zone" class="mode-zone">
-          <textarea id="raw-textarea" placeholder="Paste your raw customer reviews or tickets here (one per line, or paragraph separated)...&#10;&#10;e.g.&#10;Transferred ₹4800 to merchant via bank. Money debited but merchant never received it. Support says wait 3-5 days. Shopkeeper refused to let me leave without cash. Uninstalled and switched to competitor.&#10;&#10;Money deducted twice while paying electricity bill. Neither bill cleared nor refund received after 7 days. Worst app experience."></textarea>
+          <div class="preset-selector-bar">
+            <span class="preset-title">Test Real Indian Products:</span>
+            <div class="preset-chips-group">
+              <button class="preset-chip active" id="chip-food" onclick="loadProductPreset('food', this)">🍕 Swiggy / Zomato</button>
+              <button class="preset-chip" id="chip-ecommerce" onclick="loadProductPreset('ecommerce', this)">👗 Meesho / E-Com</button>
+              <button class="preset-chip" id="chip-services" onclick="loadProductPreset('services', this)">🛠️ Urban Company</button>
+              <button class="preset-chip" id="chip-fintech" onclick="loadProductPreset('fintech', this)">💳 UPI / Payments</button>
+            </div>
+          </div>
+          <textarea id="raw-textarea" placeholder="Paste your raw customer reviews or tickets here, or click any product preset chip above to test real customer complaints..."></textarea>
           <div class="textarea-footer">
             <span id="paste-counter">0 customer reviews detected</span>
-            <button class="btn-text-link" onclick="loadSampleIntoTextarea()">Insert Sample Reviews</button>
+            <button class="btn-text-link" onclick="loadProductPreset('food')">Reset to Food Delivery Sample</button>
           </div>
         </div>
 
@@ -273,9 +290,13 @@
           <div class="dash-sub" id="dash-meta-text">Analyzed from 6,000 customer reviews • 100% Verbatim Grounded Citations</div>
         </div>
         <div class="dash-header-actions">
+          <button class="btn btn-secondary-clean btn-rubric-trigger" id="btn-open-rubric" onclick="openRubricModal()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span>PM Evals: Bad vs Good Output</span>
+          </button>
           <button class="btn btn-secondary-clean" onclick="resetToUpload()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Upload New Dataset
+            <span>Upload New Dataset</span>
           </button>
         </div>
       </div>
@@ -384,8 +405,83 @@
 
   </main>
 
+  <!-- ================= PM EVALUATION RUBRIC MODAL ================= -->
+  <div id="rubric-modal-overlay" class="modal-overlay" onclick="closeRubricModal(event)">
+    <div class="rubric-modal-card" onclick="event.stopPropagation()">
+      <div class="rubric-modal-header">
+        <div class="rubric-header-left">
+          <div class="rubric-badge-pill">
+            <span class="status-pulse-dot"></span>
+            <span>PM PORTFOLIO EVALUATION STANDARD</span>
+          </div>
+          <h2 class="rubric-title">Why This Is Portfolio-Worthy: Bad vs. Good Output</h2>
+          <p class="rubric-subtitle">The evaluation rubric that separates an elite Product Manager from a naive AI summarizer.</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeRubricModal()">&times;</button>
+      </div>
+
+      <div class="rubric-columns-grid">
+        <!-- Bad Output Card -->
+        <div class="rubric-card rubric-bad">
+          <div class="rubric-card-badge badge-bad-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>The Naive "Bad" Output (Generic LLM)</span>
+          </div>
+          
+          <div class="rubric-quote-box quote-bad">
+            <p><em>"A bad output says: 'Users are unhappy with onboarding. Payments have server issues and customer support is slow.'"</em></p>
+          </div>
+
+          <div class="rubric-critique">
+            <h4 class="critique-title">Why this fails in an executive PM review:</h4>
+            <ul class="critique-list">
+              <li><strong>Zero Quantification:</strong> How many users? 5? 5,000? A PM cannot allocate engineering sprints without numbers.</li>
+              <li><strong>No Root Cause:</strong> Is it merchant checkout? Bank switch timeout? Duplicate debits?</li>
+              <li><strong>Fails the "Based on What?" Test:</strong> Zero traceability. If an engineer asks "Where did this come from?", the PM has no review IDs to show.</li>
+              <li><strong>Vague KPI:</strong> "Improve customer experience" cannot be measured or tracked against quarterly OKRs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Good Output Card -->
+        <div class="rubric-card rubric-good">
+          <div class="rubric-card-badge badge-good-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>The Grounded "Good" Output (Our VoC Copilot)</span>
+          </div>
+
+          <div class="rubric-quote-box quote-good">
+            <p><strong>"12 out of 50 reviews mention onboarding confusion."</strong></p>
+            <p><em>"5 users specifically said they could not complete the first setup step because the OTP screen stayed blank."</em></p>
+            <div class="rubric-citations-sample">
+              <span>Verified Sources: <code>REV-03</code>, <code>REV-08</code>, <code>REV-12</code> (100% Verbatim Match)</span>
+            </div>
+          </div>
+
+          <div class="rubric-critique">
+            <h4 class="critique-title">Why this wins in an executive PM review:</h4>
+            <ul class="critique-list">
+              <li><strong>Concrete Evidence:</strong> Supported by exact review volume and quantified active churn severity (P0 vs P1).</li>
+              <li><strong>Specific Operational Root Cause:</strong> Identifies the exact failure point (Step 1 OTP screen freeze).</li>
+              <li><strong>100% Verifiable Source Grounding:</strong> Answers "Based on what?" by linking directly to raw review IDs with zero AI hallucination.</li>
+              <li><strong>Actionable Strategic Metric:</strong> Synthesizes a Linear-style initiative with a measurable North Star KPI (e.g., -45% drop-off in &lt;60s).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="rubric-modal-footer">
+        <div class="rubric-footer-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>Every insight on this dashboard adheres to the <strong>100% Verbatim Grounding Standard</strong>: zero paraphrasing, zero hallucinated IDs, and quantifiable business impact.</span>
+        </div>
+        <button class="btn btn-primary-clean" onclick="closeRubricModal()">Got It, Back to Dashboard</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="data_bundle.js?v=2.3"></script>
-  <script src="app.js?v=2.3"></script>
+  <script src="data_bundle.js?v=2.4"></script>
+  <script src="app.js?v=2.4"></script>
 </body>
 </html>
